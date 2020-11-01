@@ -1,19 +1,18 @@
 ---
-title: Smoother gulp advzip
+title: Streamline advzip usage in your gulp build
 tags: [javascript, js13k, gulp]
-redirect_from:
-  - /smoother-gulp-advzip/
+date: 2018-11-03
+alias:
+- /2018-11-03-smoother-gulp-advzip/
 ---
-
-## Streamline advzip usage in your gulp build
 
 A quick tip: if you use `advzip` in your build pipeline, you can now streamline it by using the
 new [gulp-advzip](https://www.npmjs.com/package/gulp-advzip) plugin.
 
-```javascript
+``` js gulpfile.js
 const zip = require('gulp-zip');
 const advzip = require('gulp-advzip');
- 
+
 gulp.task('zip', () => {
     return gulp.src(['my files...'])
         .pipe(zip('archive.zip'))
