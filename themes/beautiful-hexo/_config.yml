@@ -1,0 +1,89 @@
+navbar-links:
+    Archive: /archives
+    Github: https://github.com/twoyao/beautiful-hexo
+    About: /about/
+
+avatar: /hexo.png
+favicon: /hexo.png
+
+header:
+    title: "Beautiful Hexo"
+    motto: Build a beautiful and simple website in minutes
+    bigimgs:
+        - src: /bigimgs/01.jpg
+          desc: beautiful island
+        - src: /bigimgs/02.jpg
+          desc: Tropical Fish
+        - src: /bigimgs/03.jpg
+          desc: ocean
+
+rss: /atom.xml
+googlefonts:
+  - "Lora:400,700,400italic,700italic"
+  - "Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+
+highlight:
+  enable: true
+# or use any highlight.js style
+#  style_path: "//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/styles/default.min.css"
+  style_path: "/css/highlight.css"
+
+footer:
+  facebook:
+    link: # your link e.g. https://...
+    title: Facebook
+    icon: fa-facebook
+    enable: false
+  weibo:
+    link: 'http://weibo.com/bisyao?is_all=1'
+    title: Weibo
+    icon: fa-weibo
+    enable: true
+  github:
+    link: 'https://github.com/twoyao'
+    title: GitHub
+    icon: fa-github
+    enable: true
+  rss:
+    link: '/atom.xml'
+    title: RSS
+    icon: fa-rss
+    enable: true
+  twitter:
+    link: 'https://twitter.com/twoyao_'
+    title: Twitter
+    icon: fa-twitter
+    enable: true
+  mail:
+    link: 'mailto:bisyao@gmail.com'
+    title: Email me
+    icon: fa-envelope
+    enable: true
+  linkin:
+    link: # your link here e.g. http...
+    title: LinkedIn
+    icon: fa-linkedin
+    enable: false
+  stackoverflow:
+    link: # your link here e.g. http...
+    title: StackOverflow
+    icon: fa-stack-overflow
+    enable: false
+
+google_analytics:
+
+comment:
+  # false, disqus, netease or facebook
+  enable: netease
+  # disqus user, netease productKey or facebook appid 
+  id: 64d7f0abf9224be3bfdcc6cfb9b83fcf
+  # [facebook only] plugin language 
+  lang: en_US
+  # [facebook only] number of posts per load
+  numposts: 10
+
+# IMPORTANT NOTE [Facebook Plugin]:
+# If you are using Facebook Social Plugin and it's not working, 
+# please go to this URL https://developers.facebook.com/tools/debug/og/object/
+# copy the link of your post there and press the button "Fetch new scrape information".
+# In that way, you are going to update your post metatags Facebook Open Graph information. 
