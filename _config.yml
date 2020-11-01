@@ -15,7 +15,7 @@ timezone: ''
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://yoursite.com
 root: /
-permalink: :year/:month/:day/:title/
+permalink: :title/
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -94,7 +94,21 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 # theme: landscape
+# theme: cactus
+# theme: beautiful-hexo
 theme: cactus
+
+# Theme Config
+#theme_config:
+theme_config:
+  colorscheme: dark
+  highlight: tomorrow-night-bright
+  avatar: /images/shark-400.jpg
+  favicon: /images/shark-400.jpg
+  header:
+    title: "7 ton shark"
+    motto: "pad thai, wifi, computer science lullaby"
+
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
