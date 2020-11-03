@@ -1,14 +1,10 @@
 ---
-title: Web Audio API, Part 1
+title: Creating simple music using the Web Audio API
 tags: [javascript, js13k]
-excerpt: >-
-  Creating simple music using the Web Audio API: using Web Audio in a small javascript project, game, or
-  js13k entry.
-redirect_from:
-  - /web-audio-part-1/
+date: 2018-09-13
+alias:
+- /2018-09-13/web-audio-part-1/
 ---
-
-## Creating simple music using the Web Audio API
 
 So, you've never used the Web Audio API before, and you want to add some music to your small javascript project / game / js13k entry? Let's jump straight into it and make a noise.
 
@@ -32,8 +28,7 @@ o.start(ctx.currentTime);
 o.stop(ctx.currentTime + 0.5);
 ```
 
-{: .notice.text-center }
-<button class="btn btn--large btn--success" id="example1" onclick="example1.run()"><i class="fa fa-play"></i> Play</button>
+{% play_button "Play Sound" "example1.run()" %}
 
 Pretty simple! Note that when you set up an oscillator, you specify when in the future to start (in the case
 above, we're asking the audio context to start _right now_). That means you can schedule lots of future notes
@@ -62,8 +57,7 @@ o3.start(ctx.currentTime + 1);
 o3.stop(ctx.currentTime + 1.5);
 ```
 
-{: .notice.text-center }
-<button class="btn btn--large btn--success" id="example2" onclick="example2.run()"><i class="fa fa-play"></i> Play</button>
+{% play_button "Play Sound" "example2.run()" %}
 
 These examples are going to get really long if we keep repeating ourselves like this, so let's make a function
 to encapsulate playing a note.
@@ -85,8 +79,7 @@ play(ctx.destination, 346.13, ctx.currentTime + 0.4, 0.2);
 play(ctx.destination, 366.90, ctx.currentTime + 0.6, 0.2);
 ```
 
-{: .notice.text-center }
-<button class="btn btn--large btn--success" id="example3" onclick="example3.run()"><i class="fa fa-play"></i> Play</button>
+{% play_button "Play Sound" "example3.run()" %}
 
 Hey, that actually sounds like music!
 
@@ -135,21 +128,19 @@ play(gainNode, 346.13, ctx.currentTime + 0.4, 0.2);
 play(gainNode, 366.90, ctx.currentTime + 0.6, 0.2);
 ```
 
-{: .notice.text-center }
-<button class="btn btn--large btn--success" onclick="example4.run(0.1,0.9,0.99)"><i class="fa fa-play"></i> Play</button>
+{% play_button "Play Sound" "example4.run(0.1,0.9,0.99)" %}
 
 Try alternating between the previous demo and this one to see the difference. Note that the feel of this
 envelope can be modified by playing with the values I chose above. Check out the examples below to see
 how you can get quite different sounds, not by modifying frequency or length in any way, but just by
 playing with the sound's envelope:
 
-![Picturing sound envelopes](/assets/post/sound-envelopes.png)
+![Picturing sound envelopes](sound-envelopes.png)
 
-{: .notice.text-center }
-<button class="btn btn--large btn--success" onclick="example4.run(0.1,0.9,0.99)"><i class="fa fa-play"></i> 0-10-90-99</button>
-<button class="btn btn--large btn--success" onclick="example4.run(0.7,0.9,0.99)"><i class="fa fa-play"></i> 0-70-90-99</button>
-<button class="btn btn--large btn--success" onclick="example4.run(0.2,0.4,0.99)"><i class="fa fa-play"></i> 0-20-40-99</button>
-<button class="btn btn--large btn--success" onclick="example4.run(0.05,0.2,0.99)"><i class="fa fa-play"></i> 0-5-20-99</button>
+{% play_button "00, 10, 90, 99" "example4.run(0.1,0.9,0.99)" %}
+{% play_button "00, 70, 90, 99" "example4.run(0.7,0.9,0.99)" %}
+{% play_button "00, 20, 40, 99" "example4.run(0.2,0.4,0.99)" %}
+{% play_button "00, 05, 20, 99" "example4.run(0.05,0.2,0.99)" %}
 
 ## Some notes about frequency
 
@@ -217,13 +208,13 @@ function play(node, note, start, length) {
 });
 ```
 
-{: .notice.text-center }
-<button class="btn btn--large btn--success" id="example5" onclick="example5.run()"><i class="fa fa-play"></i> Play</button>
+{% play_button "Play Sound" "example5.run()" %}
 
-{: .notice--info }
+{% note %}
 **Math Tip:** In case you need it, it is pretty easy to calculate frequencies based on cents yourself. Note that
 cents represent a _difference between two frequencies_. Given an initial frequency `f1`, and a cents value `c`,
 you can compute the modified frequency `f2 = f1 * Math.pow(2, c / 100)`.
+{% endnote %}
 
 ## Playing overlapping notes
 
@@ -258,8 +249,7 @@ var index = 0;
 });
 ```
 
-{: .notice.text-center }
-<button class="btn btn--large btn--success" id="example6" onclick="example6.run()"><i class="fa fa-play"></i> Play</button>
+{% play_button "Play Sound" "example6.run()" %}
 
 ## Scheduling your song
 
@@ -297,7 +287,7 @@ function scheduleNotes() {
 }
 ```
 
-{: .notice--warning }
+{% note %}
 Make sure to test how your game or application responds to minimizing the browser and changing tabs.
 As a general rule, the audio context will continue to play any scheduled notes, but all animation
 frames will pause. This will mean that if you rely on animation frames to play your music, it'll
@@ -305,6 +295,7 @@ stop playing when the user switches tabs. More importantly, it means that when y
 your tab, your `nextNoteTick` value may be minutes _behind_ `ctx.currentTime`. The best thing to do
 in this case is to check for it in your function, and fast-forward `nextNoteTick` to the
 current time if it is more than a second or two behind.
+{% endnote %}
 
 ## Next steps
 

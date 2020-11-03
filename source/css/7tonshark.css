@@ -1,5 +1,5 @@
 
-html body {
+html body, html button {
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     font-size: 16px;
 }
@@ -8,18 +8,26 @@ html body h2, html body h1 {
   color: rgba(0,160,210);
 }
 
-a.play-link {
+a.play-link, button.play-link {
   background: rgb(0,130,180);
   background: linear-gradient(180deg, rgba(0,130,180,1) 0%, rgba(0,150,200,1) 100%);
   border-radius: 3px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
   display: inline-block;
   padding: 3px 8px;
   text-decoration: none;
 }
 
-a.play-link:hover {
+button.play-link {
+  line-height: 1.725rem;
+}
+
+a.play-link:hover, button.play-link:hover {
   background: rgb(180,0,130);
   background: linear-gradient(180deg, rgba(180,0,130,1) 0%, rgba(200,0,150,1) 100%);
+  cursor: pointer;
   text-decoration: none;
 }
 
@@ -34,4 +42,8 @@ span.note-p {
   float: left;
   margin-left: -2rem;
   padding-left: 0.33rem;
+}
+
+p.center {
+  text-align: center;
 }
