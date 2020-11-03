@@ -101,7 +101,7 @@ theme: cactus
 # Theme Config
 #theme_config:
 theme_config:
-  colorscheme: dark
+  colorscheme: "../../../../../source/css/_colors/shark"
   highlight: tomorrow-night-bright
   avatar: /images/shark-400.jpg
   favicon: /images/shark-400.jpg

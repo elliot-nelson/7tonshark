@@ -1,15 +1,10 @@
 ---
-title: PNG Storage
+title: Using PNG files to compress game data
 tags: [javascript, js13k, png]
-excerpt: >-
-  Using PNG files to compress game data: can you save space by storing levels and
-  other assets as images?
-redirect_from:
-  - /png-storage/
+date: 2019-01-13
+alias:
+- /2019-01-13/png-storage/
 ---
-
-## Using PNG files to compress game data
-
 I had a conversation with a friend during the holidays that piqued my interest: I
 was describing some of the hoops I had jumped through to get my level data for my
 js13k entry to fit into 13kb, and he suggested I might have been able to shortcut
@@ -88,7 +83,7 @@ Interested in trying it out yourself? I used [pngjs](https://github.com/lukeapag
 my tests. (You could of course generate these out of a canvas in a browser, but in practice you
 want something that can run as part of your gulp pipeline.)
 
-```javascript
+``` js pack-png-example.js
 var fs = require('fs');
 var PNG = require("pngjs").PNG;
 
@@ -114,7 +109,7 @@ If you do end up using this technique, then of course you also need to add the c
 in your game to actually get the level data _out_ of the image in the browser. You
 can use the standard off-screen canvas technique to do that:
 
-```javascript
+``` js game.js
 let img = document.getElementById('image');
 let canvas = document.createElement('canvas');
 canvas.width = img.width;

@@ -22,3 +22,16 @@ a.play-link:hover {
   background: linear-gradient(180deg, rgba(180,0,130,1) 0%, rgba(200,0,150,1) 100%);
   text-decoration: none;
 }
+
+p.note-p {
+  border: solid 1px rgb(0,130,180);
+  border-left: solid 2rem rgb(0,130,180);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+span.note-p {
+  float: left;
+  margin-left: -2rem;
+  padding-left: 0.33rem;
+}
