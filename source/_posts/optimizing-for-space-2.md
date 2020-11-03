@@ -1,14 +1,10 @@
 ---
 title: Optimizing for Space Part 2
 tags: [javascript, js13k, gulp]
-excerpt: >-
-  Adventures in eliminating bytes: make your zip files even smaller by eliminating
-  extra files altogether.
-redirect_from:
-  - /optimizing-for-space-2/
+date: 2019-02-03
+alias:
+- /2019-02-03/optimizing-for-space-2/
 ---
-
-## Adventures in eliminating bytes
 
 In the quest for smaller and smaller zip files, one important tool is eliminating
 extra files altogether. Every file in the zip has an overhead of around 88 bytes - more
@@ -18,7 +14,7 @@ a sprite sheet is so valuable (crunching all your PNGs into one PNG, for example
 Let's ignore images for a second, though, and think about just our core files - in a typical
 game, this is your `index.html`, your `.css` file, and your `.js` file.
 
-```html
+``` html index.html
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="app.css">
@@ -29,7 +25,7 @@ game, this is your `index.html`, your `.css` file, and your `.js` file.
 </html>
 ```
 
-```css
+``` css game.css
 html, body {
     margin: 0px;
     padding: 0px;
@@ -37,15 +33,13 @@ html, body {
 }
 ```
 
-```js
+``` js game.js
 console.log('Initializing a game...');
 ```
 
 We'll tie all this together with our gulp build:
 
-```js
-// gulpfile.js
-
+``` js gulpfile.js
 function html() {
     return gulp.src('src/*.html')
         .pipe(htmlmin({ collapseWhitespace: true }))
@@ -106,11 +100,12 @@ actual content). Let's see how we can reduce it.
 
 ## Inlining our CSS
 
-{: .notice--info }
+{% note %}
 You might be wondering why we're bothering with CSS at all; for a canvas-heavy game,
 you may be able to ignore it altogether. Not every game is based on canvas, though,
 and if you make use of CSS animations and HTML elements, you might actually have quite
 a bit of CSS to manage.
+{% endnote %}
 
 Let's start with the obvious: discard the CSS file, and insert the content inline
 into our HTML.
@@ -212,11 +207,12 @@ we wish, including additional style-related plugins.
 Now that we've done it for CSS, it seems pretty obvious: why not do it for our game code? We're
 already minifying it into an unreadable ball, we might as well insert it into the HTML as well.
 
-{: .notice--info }
+{% note %}
 In past iterations of HTML/XHTML, you may have worried about encoding characters you'd encounter
 within your source code. In HTML5, the _only_ magic string you need to worry about is `</script>`.
 It's very unlikely you have the string `</script>` anywhere in your game logic, so feel free to
 insert as much JavaScript as you want.
+{% endnote %}
 
 ```html
 <html>
@@ -296,12 +292,13 @@ And build:
 There you have it. We've managed to crush our final zip file size from the original 484 bytes
 down to 222 bytes, a savings of 262 bytes of overhead.
 
-{: .notice--info }
+{% note %}
 Note that we express this savings in terms of _bytes of overhead_, and not a percentage. For
 our silly example, this was a savings of *~45%*, but that's not relevant because these space
 savings won't scale as we add the actual game logic - it'll stay roughly 262 bytes off the
 top. So, you can probably save this type of optimization for very late in the process, when you're
 trying to cram that last sprite into your game.
+{% endnote %}
 
 ## Using existing plugins
 

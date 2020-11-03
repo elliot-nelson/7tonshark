@@ -1,14 +1,11 @@
 ---
 title: Add WebGL shaders to your gulp build
 tags: [javascript, js13k, gulp, webgl]
-excerpt: >-
-  Incorporate WebGL shaders into your build, making them easier to manage and
-  as small as possible.
-redirect_from:
-  - /add-webgl-shaders-to-your-gulp-build/
+date: 2019-03-02
+alias:
+- /2019-03-02/add-shaders-to-your-gulp-build/
+- /add-webgl-shaders-to-your-gulp-build/
 ---
-
-## Incorporating shaders into your gulp build
 
 So, you've been following some tutorials online on WebGL, you're playing around with
 shaders, and it's time to incorporate them into your gulp build. (If you aren't,
@@ -18,7 +15,7 @@ A common technique (one the author of WebGL Fundamentals mentions) is inserting
 your shaders into your HTML source in non-javascript `<script>` tags, and loading them
 at runtime.
 
-```html
+``` html index.html
 <script id="my-vertex-shader" type="text">
     attribute vec4 a_position;
 
@@ -28,7 +25,7 @@ at runtime.
 </script>
 ```
 
-```js
+``` js game.js
 // Load the shader source
 var vertexShaderSource = document.getElementById('my-vertex-shader').text;
 // Create shader, compile program, etc...
@@ -40,9 +37,8 @@ into separate files, and wouldn't it be nice to have dedicated syntax highlighti
 (If you're a VSCode user, check out the [Shader languages](https://github.com/stef-levesque/vscode-shader)
 extension!).
 
-With gulp, we can do better. We're going to use the same technique I covered in
-[Optimizing for Space Part 2]({% post_url 2019-02-03-optimizing-for-space-2 %}),
-but this time, for our shaders.
+With gulp, we can do better. We're going to use the same technique I covered
+in {% post_link 'optimizing-for-space-2' %}, but this time, for our shaders.
 
 ## Inserting shaders at build time
 
@@ -163,11 +159,12 @@ globally, so we can catch references inside the shader programs and in strings i
 as calls to `getUniformLocation`, etc., in the WebGL API. We also want to do this _before_ we run terser,
 which might accidentally pre-mangle one of our magic vars so we can't recognize it.
 
-{: .notice--info }
+{% note %}
 I'm using the convention that the WebGL Fundamentals uses for my shader vars, which is what enables
 this particular approach. If you don't like using `u_/a_/v_`, you can use a different naming strategy,
 but it has to be one that makes the variables easily distinguishable from all other text in your
 application.
+{% endnote %}
 
 So, we want to insert a new custom step right here:
 
@@ -252,7 +249,7 @@ like a quote, an operator, a space, etc.), and the second group is the matched v
 substrings to insert the new mangled name into the source code, taking care to keep that errant character
 we captured at the beginning. And last, we fudge the `lastIndex` of our running regular expression.
 
-{: .notice--info }
+{% note %}
 If you aren't that familiar with regular expressions, note that we're using the `regex.exec(string)`
 approach and not the common `string.match(regex)` approach. The advantage is that `exec` automatically
 keeps track of the last index matched, and continues marching down the string looking for new matches -
@@ -261,6 +258,7 @@ to subtract the difference between the length of our old name and our new name -
 `v_normal`, and our new name is `v_a`, we need to subtract 5 from the `lastIndex` of our regular expression.
 Otherwise it will "jump ahead" 5 characters into the modified string, and possibly skip one of the
 variables we want to replace.
+{% endnote %}
 
 Alright, we're close. Now we just need to define what our "mangled names" look like. Here's a simple approach:
 
@@ -438,11 +436,12 @@ We've wired up a new parameter (the array of reserved words), and we append all 
 to the array once we're done with our own logic. Now, anywhere in our code that we use one of
 our output names as a property, it will be left alone by terser.
 
-{: .notice--info }
+{% note %}
 We're cheating a little here, and taking advantage of the fact that `terser` accepts its options object
 at initialization time, but does not _parse_ those options until it begins minifying. That's why we can
 get away with appending a bunch of new values to the array we passed to `terser`, in the step right before
 tersing.
+{% endnote %}
 
 ## Testing our theory
 
@@ -493,7 +492,7 @@ Optimized zip file:            3717 (-  42 bytes)
 
 According to these numbers, I got roughly half of the ideal savings, which isn't bad!
 
-{: .notice--info }
+{% note %}
 Why wouldn't we get the full expected savings? It all has to do with the ZIP dictionary, which we are
 optimizing to be as smart as possible. As a simple example, notice that `u_worldViewProjection` and
 `u_worldInverseTranspose` both start with `u_world`; almost certainly the dictionary already optimized
@@ -501,6 +500,7 @@ that prefix out, reducing our expected savings by 5 characters. Another issue is
 that can't be optimized out, such as the built-in `gl_Position`: because it shares 7 characters with
 `a_position`, that dictionary entry won't go away at all, meaning those 7 characters of savings are
 lost. That's why it's important to actually test our optimizations!
+{% endnote %}
 
 ## Conclusions
 
