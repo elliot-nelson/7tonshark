@@ -47,3 +47,7 @@ span.note-p {
 p.center {
   text-align: center;
 }
+
+.highlight {
+  background-color: #202020;
+}
