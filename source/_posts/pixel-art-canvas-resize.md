@@ -1,6 +1,7 @@
 ---
 title: Scaling a pixel art game for the browser
-date: 2020-10-23
+tags: [javascript, js13k]
+date: 2020-11-08
 ---
 
 There are many types of graphics you can use in a browser game. If you are using vector graphics or canvas primitives, then browser dimensions don't always matter. However, if you're trying to create a classic pixel art look in your game, how you scale your game for the browser can make a big difference in the outcome.

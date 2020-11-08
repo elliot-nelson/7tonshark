@@ -51,3 +51,13 @@ p.center {
 .highlight {
   background-color: #202020;
 }
+
+#nav a {
+
+}
+
+code {
+  background-color: #f0e0f0;
+  border: none;
+  padding: 0 4px;
+}
