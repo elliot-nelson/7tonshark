@@ -101,6 +101,17 @@ theme: cactus
 # Theme Config
 #theme_config:
 theme_config:
+  social_links:
+    github: https://github.com/elliot-nelson
+    twitter: https://twitter.com/7tonshark
+    mail: mailto:nelson.work@gmail.com
+  nav:
+    home: /
+    about: /about/
+    articles: /archives/
+  copyright:
+    start_year: 2017
+    end_year:
   colorscheme: "../../../../../source/css/_colors/shark"
   highlight: tomorrow-night-bright
   avatar: /images/shark-400.jpg

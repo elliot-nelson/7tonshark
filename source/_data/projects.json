@@ -1,0 +1,22 @@
+[
+    {
+        "name": "js13k 2018 - Raven",
+        "url": "http://js13kgames.com/entries/raven",
+        "desc": "Top-down action-puzzle game, made for 2018 js13k."
+    },
+    {
+        "name": "js13k 2019 - Letchworth Village",
+        "url": "https://js13kgames.com/entries/letchworth-village",
+        "desc": "Half-finished 2D button masher, made for 2019 js13k."
+    },
+    {
+        "name": "js13k 2020 - WIZARD WITH A SHOTGUN",
+        "url": "https://js13kgames.com/entries/wizard-with-a-shotgun",
+        "desc": "Top-down 2D shooter, made for 2020 js13k."
+    },
+    {
+        "name": "awesome-branch-name",
+        "url": "https://www.npmjs.com/package/awesome-branch-name",
+        "desc": "Generate awesome branch names using Magic: the Gathering card names"
+    }
+]
