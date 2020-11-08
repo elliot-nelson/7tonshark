@@ -4,7 +4,7 @@ tags: [javascript, js13k]
 date: 2020-11-08
 ---
 
-There are many types of graphics you can use in a browser game. If you are using vector graphics or canvas primitives, then browser dimensions don't always matter. However, if you're trying to create a classic pixel art look in your game, how you scale your game for the browser can make a big difference in the outcome.
+For a browser game with a classic "pixel art" look, dealing with different browser dimensions can be challenging. This post outlines some approaches that you might find helpful.
 
 As an example, let's say you have chosen to design a game with target dimensions of `480x270px` (a 16:9 ratio). I've created an example image of this size to use as a prop:
 
@@ -196,3 +196,9 @@ Similar to playing an old movie on your newer TV, we have multiple options for d
 The only difference between this approach and the last one is that we replaced `Math.min` with `Math.max` - we are selecting the lowest scale instead of the highest. Instead of adding black bars where extra content would go, this "zooms in", losing either top/bottom content or left/right content, depending on the browser.
 
 Notice how the game always fills the screen, but there is now part of the game grid you cannot see anymore when you drag your browser to be narrow or wide. This approach means you don't have to figure out what to put in the "extra" game area - but, you need to make sure your game is still playable (perhaps by making your UI float based on the new game dimensions).
+
+{% note %}
+Approach 4 is what I used in my 2020 js13k entry! For an example of this strategy in a finished game, check out the implementation in [Viewport.js](https://github.com/elliot-nelson/js13k-2020-wizard-with-a-shotgun/blob/master/src/js/Viewport.js).
+{% endnote %}
+
+Have a different approach you've used successfully? Shoot me a note and and I'll be happy to add it.

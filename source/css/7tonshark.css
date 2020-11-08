@@ -39,6 +39,7 @@ p.note-p {
 }
 
 span.note-p {
+  color: white;
   float: left;
   margin-left: -2rem;
   padding-left: 0.33rem;
@@ -60,4 +61,8 @@ code {
   background-color: #f0e0f0;
   border: none;
   padding: 0 4px;
+}
+
+.content p {
+  hyphens: manual;
 }
