@@ -96,11 +96,15 @@ ignore:
 # theme: landscape
 # theme: cactus
 # theme: beautiful-hexo
-theme: cactus
+# theme: cactus
+theme: clean-blog
 
 # Theme Config
 #theme_config:
 theme_config:
+  menu_title: 7 ton shark
+  index_cover: /images/header.jpg
+
   social_links:
     github: https://github.com/elliot-nelson
     twitter: https://twitter.com/7tonshark
