@@ -135,7 +135,6 @@ theme_config:
     title: "7 ton shark"
     motto: "pad thai, wifi, computer science lullaby"
 
-
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
