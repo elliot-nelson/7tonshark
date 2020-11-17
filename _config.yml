@@ -50,7 +50,7 @@ highlight:
   auto_detect: false
   tab_replace: ''
   wrap: true
-  hljs: false
+  hljs: true
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
