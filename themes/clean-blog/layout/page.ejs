@@ -26,13 +26,15 @@
     </header>
 
     <!-- Main Content -->
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <% items.forEach(function(item){ %>
-                    <%- partial('_partial/tag-category-index', {item: item}) %>
-                <% }); %>
-                <div class="archive-before-pagination"></div>
+    <div class="shark-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <% [...items.data].sort((a, b) => b.length - a.length).forEach(item => { %>
+                        <%- partial('_partial/tag-category-index', { item }) %>
+                    <% }); %>
+                    <div class="archive-before-pagination"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -41,6 +43,3 @@
         <%- partial('_partial/article-full', {item: page}) %>
     </section>
 <% } %>
-
-
-

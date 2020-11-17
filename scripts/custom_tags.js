@@ -5,16 +5,16 @@ function classLink([className, title, url], context) {
 }
 
 function playLink([title, url], content) {
-  return '<p class="center">' + classLink(['play-link', `${title} <i class="fas fa-play"></i>`, url], content) + '</p>';
+  return '<p class="center">' + classLink(['play-link', `${title} <i class="fa fa-play"></i>`, url], content) + '</p>';
 }
 
 function playButton([title, onclick], content) {
-  return `<p class="center"><button class="play-link" onclick="${onclick}">${title} <i class="fas fa-play"></i></button></p>`;
+  return `<p class="center"><button class="play-link" onclick="${onclick}">${title} <i class="fa fa-play"></i></button></p>`;
 }
 
 function note(args, content) {
   content = hexo.render.renderSync({ text: content, engine: 'markdown' });
-  content = content.replace(/^<p>/, '<p class="note-p"><span class="note-p"><i class="fas fa-info"></i></span>');
+  content = content.replace(/^<p>/, '<p class="note-p"><span class="note-p"><i class="fa fa-info"></i></span>');
   return content;
 }
 

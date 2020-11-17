@@ -23,14 +23,34 @@
 </header>
 
 <!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <% page.posts.each(function(item){ %>
-                <%- partial('_partial/article-archive', {item: item}) %>
-            <% }); %>
-            <div class="archive-before-pagination"></div>
-            <%- partial('_partial/pagination') %>
+
+<div class="shark-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div id="archive">
+                    <ul class="post-list">
+                    <% var year = 0 %>
+                    <% var change = false %>
+                    <!--% var field_sort = theme.archive.sort_updated ? 'updated' : 'date' %-->
+                    <% var field_sort = 'date' %>
+                    <% page.posts.sort(field_sort, 'desc').each(function(post) { %>
+                        <% var itemYear = date(post[field_sort], 'YYYY') - 0 %>
+                        <% change = year !== itemYear %>
+                        <% year = change ? itemYear : year %>
+                        <% if (change) { %>
+                        <h2><%= year %></h2>
+                        <hr>
+                        <% } %>
+                        <li class="post-item">
+                        <span><%- partial('_partial/post/title', { post: post, index: true, class_name: '' }) %></span>
+                        <%- partial('_partial/post/date', { post: post, class_name: 'meta' }) %>
+                        </li>
+                    <% }); %>
+                    </ul>
+                    <%- partial('_partial/pagination') %>
+                </div>
+            </div>
         </div>
     </div>
 </div>

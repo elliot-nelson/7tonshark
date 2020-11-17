@@ -100,11 +100,22 @@ ignore:
 theme: clean-blog
 
 # Theme Config
-#theme_config:
 theme_config:
   menu_title: 7 ton shark
   index_cover: /images/header.jpg
-
+  menu:
+    Home: /
+    Archives: /archives
+    Tags: /tags
+    Categories:
+      hide: true
+    GitHub:
+      url: https://github.com/elliot-nelson/
+      icon: github
+    Github:
+      hide: true
+  github_url: https://github.com/elliot-nelson/
+  twitter_url: https://twitter.com/7tonshark/
   social_links:
     github: https://github.com/elliot-nelson
     twitter: https://twitter.com/7tonshark

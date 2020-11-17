@@ -1,0 +1,86 @@
+---
+layout: false
+---
+<style>
+    document, body {
+        margin: 0px;
+        padding: 0px;
+    }
+    #canvas {
+        width: 100%;
+        height: 100%;
+    }
+</style>
+<canvas id="canvas"></canvas>
+<script>
+const GAME_WIDTH = 480;
+const GAME_HEIGHT = 270;
+
+const Game = {
+    width: 0,
+    height: 0,
+
+    init() {
+        // Initialize canvas
+        Game.canvas = document.getElementById('canvas');
+        Game.ctx = Game.canvas.getContext('2d');
+
+        // Load our "game grid" image
+        Game.image = new Image();
+        Game.image.src = 'grid.png';
+
+        // Request first frame
+        Game.image.onload = () => {
+            window.requestAnimationFrame(() => Game.update());
+        };
+    },
+
+    update() {
+        Game.resize();
+        Game.ctx.drawImage(Game.image, -4, -4);
+
+        const browser = `Browser: ${Game.sizeInfo.client[0]}x${Game.sizeInfo.client[1]}`;
+        const game =    `Game:    ${Game.sizeInfo.game[0]}x${Game.sizeInfo.game[1]}`;
+        const scale =   `Scale:   ${Game.sizeInfo.scale[0]}x${Game.sizeInfo.scale[1]}`;
+
+        Game.ctx.font = '12px "Andale Mono", "Courier New", Courier, monospace';
+
+        Game.ctx.fillStyle = 'rgba(62, 48, 54)';
+        Game.ctx.fillText(browser, 62, 59);
+        Game.ctx.fillStyle = 'white';
+        Game.ctx.fillText(browser, 62, 58);
+
+        Game.ctx.fillStyle = 'rgba(62, 48, 54)';
+        Game.ctx.fillText(game, 62, 59 + 14);
+        Game.ctx.fillStyle = 'white';
+        Game.ctx.fillText(game, 62, 58 + 14);
+
+        Game.ctx.fillStyle = 'rgba(62, 48, 54)';
+        Game.ctx.fillText(scale, 62, 59 + 28);
+        Game.ctx.fillStyle = 'white';
+        Game.ctx.fillText(scale, 62, 58 + 28);
+
+        window.requestAnimationFrame(() => Game.update());
+    },
+
+    resize() {
+        // Set the canvas width and height
+        Game.canvas.width = GAME_WIDTH;
+        Game.canvas.height = GAME_HEIGHT;
+
+        // Don't forget to turn off image smoothing
+        Game.ctx.imageSmoothingEnabled = false;
+
+        Game.sizeInfo = {
+            client: [Game.canvas.clientWidth, Game.canvas.clientHeight],
+            game: [GAME_WIDTH, GAME_HEIGHT],
+            scale: [
+                ((Game.canvas.clientWidth / GAME_WIDTH * 100) | 0) / 100,
+                ((Game.canvas.clientHeight / GAME_HEIGHT * 100) | 0) / 100
+            ]
+        };
+    },
+};
+
+Game.init();
+</script>

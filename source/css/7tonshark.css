@@ -1,4 +1,4 @@
-
+/*
 html body, html button {
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     font-size: 16px;
@@ -65,4 +65,116 @@ code {
 
 .content p {
   hyphens: manual;
+}
+*/
+
+/* 7tonshark: custom stylesheet overrides for clean-blog */
+
+/* header */
+.intro-header {
+  margin-bottom: 0px;
+}
+.navbar {
+  background: rgba(48, 48, 48, 0.5);
+}
+.site-heading hr.small {
+  opacity: 0;
+}
+h1 {
+  background: rgba(48, 48, 48, 0.5);
+  display: inline-block;
+  border-radius: 8px;
+  padding: 8px 16px;
+}
+
+/* body */
+.shark-container {
+  background: rgb(255,255,255);
+  background: linear-gradient(180deg, rgba(32,32,64,1) 0px, rgba(255,255,255,1) 8px);
+  padding-top: 32px;
+}
+.shark-footer {
+  background: rgb(255,255,255);
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0px, rgba(32,32,64,1) 8px);
+  height: 8px;
+}
+
+/* archive adjustments */
+#archive h2 {
+  font-style: italic;
+}
+#archive .post-item {
+  list-style-type: none;
+}
+#archive .post-item {
+  margin-left: 40px;
+  margin-bottom: 16px;
+}
+#archive .post-item a {
+  text-decoration: none;
+}
+#archive .post-item h3 {
+  margin-bottom: 4px;
+}
+.meta {
+  color: #666;
+  font-style: italic;
+}
+
+/* tag index */
+h3 .count {
+  opacity: 0.7;
+  font-style: italic;
+}
+
+/* footer */
+footer {
+  background-color: #808080;
+  background-position: center center;
+  background-attachment: scroll;
+  background-image: url(/images/footer.jpg);
+  cursor: default;
+}
+p.copyright {
+  color: white;
+}
+hr.small-black {
+  border: solid 1px black;
+  width: 375px;
+}
+
+/* custom tag stylings */
+a.play-link, button.play-link {
+  background: rgb(0,130,180);
+  background: linear-gradient(180deg, rgba(0,130,180,1) 0%, rgba(0,150,200,1) 100%);
+  border-radius: 3px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  padding: 3px 8px;
+  text-decoration: none;
+}
+button.play-link {
+  line-height: 1.725rem;
+}
+a.play-link:hover, button.play-link:hover {
+  background: rgb(180,0,130);
+  background: linear-gradient(180deg, rgba(180,0,130,1) 0%, rgba(200,0,150,1) 100%);
+  cursor: pointer;
+  text-decoration: none;
+}
+p.note-p {
+  border: solid 1px rgb(0,130,180);
+  NOborder-left: solid 2rem rgb(0,130,180);
+  border-radius: 0.5rem;
+  padding: 8px 16px 8px 32px;
+}
+span.note-p {
+  color: rgb(0,130,180);
+  float: left;
+  margin-left: -18px;
+}
+p.center {
+  text-align: center;
 }

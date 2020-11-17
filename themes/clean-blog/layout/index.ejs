@@ -15,15 +15,16 @@
 </header>
 
 <!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <% page.posts.each(function(item){ %>
-                <%- partial('_partial/article-index', {item: item}) %>
-            <% }); %>
+<div class="shark-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <% page.posts.each(function(item, idx){ %>
+                    <%- partial('_partial/article-index', {item: item, last: idx === page.posts.length - 1 }) %>
+                <% }); %>
 
-            <%- partial('_partial/pagination') %>
+                <%- partial('_partial/pagination') %>
+            </div>
         </div>
     </div>
 </div>
-

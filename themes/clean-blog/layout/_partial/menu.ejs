@@ -16,15 +16,17 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <% for (var i in theme.menu){ %>
-                    <li>
-                        <a href="<%- theme.menu[i].url ? url_for(theme.menu[i].url) : url_for(theme.menu[i]) %>">
-                            <% if (theme.menu[i].icon) { %>
-                                <i class="fa fa-<%= theme.menu[i].icon %> fa-stack-2x"></i>
-                            <% } else { %>
-                                <%= i %>
-                            <% } %>
-                        </a>
-                    </li>
+                    <% if (!theme.menu[i].hide) { %>
+                        <li>
+                            <a href="<%- theme.menu[i].url ? url_for(theme.menu[i].url) : url_for(theme.menu[i]) %>">
+                                <% if (theme.menu[i].icon) { %>
+                                    <i class="fa fa-<%= theme.menu[i].icon %> fa-stack-2x"></i>
+                                <% } else { %>
+                                    <%= i %>
+                                <% } %>
+                            </a>
+                        </li>
+                    <% } %>
                 <% } %>
             </ul>
         </div>
