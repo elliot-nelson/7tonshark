@@ -19,6 +19,13 @@ In my spare time I play some video games, watch some TV, solve some puzzles, and
 
 - [awesome-branch-name](https://github.com/elliot-nelson/awesome-branch-name) is a silly tool that generates branch names for you based on Magic: the Gathering card names. I use this almost every day and enjoy updating it once a year or so to include new card names.
 
+## Theme
+
+- This site is generated using Hexo, with a tweaked version of the [Clean Blog](http://startbootstrap.com/template-overviews/clean-blog/) theme from [Start Bootstrap](http://startbootstrap.com/) (adapted for Hexo by [Jonathan Klughertz](http://www.codeblocq.com/)).
+
+- Syntax highlighting theme is _An Old Hope_ from [highlightjs](https://highlightjs.org/static/demo/), tweaked slightly to look good on the page and to look a little more like An Old Hope in VSCode.
+
+
 <!--
 What's good?
 js13k
