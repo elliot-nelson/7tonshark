@@ -1,12 +1,12 @@
 # Header
 menu:
-  Home: /
-  Archives: /archives
-  Tags: /tags
-  Categories: /categories
-  Github:
-    url: https://github.com/klugjo/hexo-theme-clean-blog
-    icon: github
+  #Home: /
+  #Archives: /archives
+  #Tags: /tags
+  #Categories: /categories
+  #Github:
+  #  url: https://github.com/klugjo/hexo-theme-clean-blog
+  #  icon: github
 
 # Title on top left of menu. Leave empty to use main blog title
 menu_title: Configurable Title

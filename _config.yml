@@ -105,15 +105,12 @@ theme_config:
   index_cover: /images/header.jpg
   menu:
     Home: /
+    About: /about
     Archives: /archives
     Tags: /tags
-    Categories:
-      hide: true
     GitHub:
       url: https://github.com/elliot-nelson/
       icon: github
-    Github:
-      hide: true
   github_url: https://github.com/elliot-nelson/
   twitter_url: https://twitter.com/7tonshark/
   social_links:

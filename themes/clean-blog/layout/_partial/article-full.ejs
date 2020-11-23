@@ -22,6 +22,9 @@
                         <% if(item.date) { %>
                             <%= item.date.format(config.date_format) %>
                         <% } %>
+                        <% if (item.date !== item.updated) { %>
+                            (Updated: <time datetime="<%= date_xml(item.updated) %>" itemprop="dateModified"><%= date(item.updated, config.date_format) %></time>)
+                        <% } %>
                     </span>
                 </div>
             </div>
