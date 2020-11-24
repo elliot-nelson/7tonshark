@@ -127,7 +127,7 @@ theme_config:
   colorscheme: "../../../../../source/css/_colors/shark"
   highlight: tomorrow-night-bright
   avatar: /images/shark-400.jpg
-  favicon: /images/shark-400.jpg
+  favicon: /images/favicon.jpg
   header:
     title: "7 ton shark"
     motto: "pad thai, wifi, computer science lullaby"
