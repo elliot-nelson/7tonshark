@@ -1,6 +1,6 @@
 ---
 title: Switching to Hexo
-tags: [javascript, hexo]
+tags: [hexo, jekyll]
 date: 2019-11-09
 alias:
 - /2019-11-09/hexo-teaser/
