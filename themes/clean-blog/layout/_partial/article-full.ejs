@@ -16,13 +16,13 @@
                     <% } %>
                     <span class="meta">
                         <!-- Date and Author -->
-                        <% if(item.author) { %>
+                        <% if (item.author) { %>
                             Posted by <%- item.author %> on
                         <% } %>
-                        <% if(item.date) { %>
+                        <% if (item.date) { %>
                             <%= item.date.format(config.date_format) %>
                         <% } %>
-                        <% if (item.date !== item.updated) { %>
+                        <% if (new Date(item.date).toLocaleDateString() !== new Date(item.updated).toLocaleDateString()) { %>
                             (Updated: <time datetime="<%= date_xml(item.updated) %>" itemprop="dateModified"><%= date(item.updated, config.date_format) %></time>)
                         <% } %>
                     </span>
