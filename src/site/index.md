@@ -1,6 +1,6 @@
 ---
 title: 7 ton shark
-subtitle: The personal website of Elliot Nelson.
+subtitle: The personal website of <a href="/about/">Elliot Nelson</a>.
 layout: layouts/base.njk
 ---
 
