@@ -1,0 +1,111 @@
+---
+layout: false
+tags: [example]
+---
+<style>
+    document, body {
+        margin: 0px;
+        padding: 0px;
+    }
+    #canvas {
+        width: 100%;
+        height: 100%;
+    }
+</style>
+<canvas id="canvas">
+</canvas>
+<script>
+
+const GAME_WIDTH = 480;
+const GAME_HEIGHT = 270;
+
+const Game = {
+    init() {
+        // Initialize canvas
+        Game.canvas = document.getElementById('canvas');
+        Game.ctx = Game.canvas.getContext('2d');
+
+        // Load our "game grid" image
+        Game.image = new Image();
+        Game.image.src = '../grid.png';
+
+        // Request first frame
+        Game.image.onload = () => {
+            window.requestAnimationFrame(() => Game.update());
+        };
+    },
+
+    update() {
+        // Resize implementation
+        Game.resize();
+
+        // Fill game area with black
+        Game.ctx.fillStyle = 'black';
+        Game.ctx.fillRect(0, 0, Game.sizeInfo.game[0], Game.sizeInfo.game[1]);
+
+        // Because we might have black bars in this version, we'll "center" our grid
+        // using translate (this is up to you, you might have other ideas for how to
+        // handle this extra game area in your canvas).
+        Game.ctx.translate(Game.sizeInfo.game[0] / 2 - GAME_WIDTH / 2, Game.sizeInfo.game[1] / 2 - GAME_HEIGHT / 2);
+        Game.ctx.drawImage(Game.image, -4, -4);
+
+        // Debugging info
+        const browser = `Browser: ${Game.sizeInfo.client[0]}x${Game.sizeInfo.client[1]} (pixel ratio ${Game.sizeInfo.ratio})`;
+        const game =    `Game:    ${Game.sizeInfo.game[0]}x${Game.sizeInfo.game[1]}`;
+        const scale =   `Scale:   ${Game.sizeInfo.scale[0]}x${Game.sizeInfo.scale[1]}`;
+        Game.ctx.font = '12px "Andale Mono", "Courier New", Courier, monospace';
+        Game.ctx.fillStyle = 'rgba(62, 48, 54)';
+        Game.ctx.fillText(browser, 62, 59);
+        Game.ctx.fillStyle = 'white';
+        Game.ctx.fillText(browser, 62, 58);
+        Game.ctx.fillStyle = 'rgba(62, 48, 54)';
+        Game.ctx.fillText(game, 62, 59 + 14);
+        Game.ctx.fillStyle = 'white';
+        Game.ctx.fillText(game, 62, 58 + 14);
+        Game.ctx.fillStyle = 'rgba(62, 48, 54)';
+        Game.ctx.fillText(scale, 62, 59 + 28);
+        Game.ctx.fillStyle = 'white';
+        Game.ctx.fillText(scale, 62, 58 + 28);
+
+        // Request next frame
+        window.requestAnimationFrame(() => Game.update());
+    },
+
+    resize() {
+        let dpr = window.devicePixelRatio;
+
+        // As usual, gather our size information
+        Game.sizeInfo = {
+            ratio: dpr,
+            client: [Game.canvas.clientWidth * dpr, Game.canvas.clientHeight * dpr],
+            game: [GAME_WIDTH, GAME_HEIGHT],
+            scale: [
+                ((Game.canvas.clientWidth * dpr / GAME_WIDTH * 100) | 0) / 100,
+                ((Game.canvas.clientHeight * dpr / GAME_HEIGHT * 100) | 0) / 100
+            ]
+        };
+
+        // Intentionally select the scale we want our game to run in
+        let desiredScale = Math.min(Game.sizeInfo.scale[0], Game.sizeInfo.scale[1]);
+
+        // Re-calculate our scales and game size based on the decision above
+        Game.sizeInfo.scale = [desiredScale, desiredScale];
+        Game.sizeInfo.game = [
+            (Game.canvas.clientWidth * dpr / desiredScale) | 0,
+            (Game.canvas.clientHeight * dpr / desiredScale) | 0
+        ];
+
+        // Set the canvas width and height, taking pixel ratio into account
+        Game.canvas.width = Game.canvas.clientWidth * dpr;
+        Game.canvas.height = Game.canvas.clientHeight * dpr;
+
+        // Scale the canvas using our chosen scale
+        Game.ctx.setTransform(desiredScale, 0, 0, desiredScale, 0, 0);
+
+        // Don't forget to turn off image smoothing
+        Game.ctx.imageSmoothingEnabled = false;
+    },
+};
+
+Game.init();
+</script>
