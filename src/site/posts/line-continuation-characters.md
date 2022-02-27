@@ -1,5 +1,6 @@
 ---
 title: Line \ Continuation
+description: Examples of line continuation characters in Bash, Batch, and PowerShell.
 date: 2021-02-21
 tags: [post, cicd]
 ---

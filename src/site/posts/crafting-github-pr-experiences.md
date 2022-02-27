@@ -1,5 +1,6 @@
 ---
 title: Crafting GitHub PR Experiences
+description: Avoid frustrating developers when designing your GitHub PR checks.
 date: 2021-02-28
 tags: [wip]
 ---
