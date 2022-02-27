@@ -7,7 +7,7 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "cross-env ELEVENTY_ENV=dev eleventy --serve --formats md,png,jpg,html",
-    "build": "cross-env ELEVENTY_ENV=prod eleventy",
+    "build": "cross-env ELEVENTY_ENV=prod eleventy --formats md,png,jpg,html",
     "seed": "cross-env ELEVENTY_ENV=seed eleventy"
   },
   "repository": {
