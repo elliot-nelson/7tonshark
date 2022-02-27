@@ -14,7 +14,6 @@ module.exports = function(config) {
   config.addFilter("squash", require("./src/utils/filters/squash.js") );
   config.addFilter("dateDisplay", require("./src/utils/filters/date.js") );
 
-
   // add support for syntax highlighting
   config.addPlugin(syntaxHighlight);
 
@@ -32,9 +31,8 @@ module.exports = function(config) {
       return minified.code;
   });
 
-
-  // pass some assets right through
-  config.addPassthroughCopy("./src/site/images");
+  // Base site images
+  config.addPassthroughCopy('./src/site/images');
 
   // make the seed target act like prod
   env = (env=="seed") ? "prod" : env;
@@ -44,7 +42,7 @@ module.exports = function(config) {
       output: "dist",
       data: `_data/${env}`
     },
-    templateFormats : ["njk", "md", "11ty.js"],
+    templateFormats : ["njk", "md", "11ty.js", "html", "png"],
     htmlTemplateEngine : "njk",
     markdownTemplateEngine : "njk",
     passthroughFileCopy: true
