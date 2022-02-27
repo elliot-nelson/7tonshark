@@ -1,7 +1,7 @@
 ---
 title: PowerShell on Azure DevOps
 date: 2021-02-21
-tags: [wip, cicd]
+tags: [wip]
 ---
 
 I've worked on a lot of Azure DevOps pipelines the last couple years, and I've begun to really appreciate the power of PowerShell for _non-trivial_, _cross-platform_ inline scripts.

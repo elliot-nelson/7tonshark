@@ -4,6 +4,8 @@ date: 2021-02-21
 tags: [post, cicd]
 ---
 
+Examples of line continuation characters in Bash, Command (Batch) and PowerShell.
+
 ## Bash / zsh / sh
 
 ``` bash

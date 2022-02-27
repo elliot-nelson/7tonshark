@@ -1,6 +1,6 @@
 ---
 title: 'GitHub Actions: Snake vs Kebab'
-tags: [wip, cicd]
+tags: [wip]
 date: 2022-02-21
 ---
 
