@@ -14,7 +14,7 @@ layout: layouts/base.njk
     <ul class="post-tags">
       {%- for tag in page.data.tags -%}
         {%- if tag !== 'post' -%}
-          <li><a href="/tags/{{ tag }}">#{{ tag }}</a></li>
+          <a href="/tags/{{ tag }}">#{{ tag }}</a>{{ '' if loop.last else ', ' }}
         {%- endif -%}
       {%- endfor -%}
     </ul>

@@ -148,8 +148,7 @@ a:focus {
 
 code {
   font-size: 0.8em;
-  background-color: mix($text-color,$accent-color, 80%);
-  color: rgb(42, 65, 77);
+  background-color: #272822;
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 3px;
@@ -160,7 +159,6 @@ code {
 
 code {
   /* to match prism-okaidia */
-  background-color: mix($accent-color, #272822, 20%);
   color: $text-color;
 }
 

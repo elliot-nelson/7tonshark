@@ -11,7 +11,7 @@ templateEngineOverride: njk, md
     {%- if page.url === post.url -%}
       {%- for tag in post.data.tags -%}
         {%- if tag !== 'post' -%}
-          <a href="/tags/{{ tag }}/">#{{ tag }}</a>
+          <a href="/tags/{{ tag }}">#{{ tag }}</a>{{ '' if loop.last else ', ' }}
         {%- endif -%}
       {%- endfor -%}
     {%- endif -%}

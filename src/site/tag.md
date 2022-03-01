@@ -6,7 +6,16 @@ pagination:
 permalink: /tags/{{ tag }}/
 layout: layouts/base.njk
 ---
+{%-
+  set tagDescriptions = {
+    'cicd': 'Posts about CI/CD, pipelines, and build tools.',
+    'dev': 'Posts about software development.',
+    'gamedev': 'Posts about amateur game development.'
+  }
+-%}
 <h1>#{{ tag }}</h1>
+
+_{{ tagDescriptions[tag] or 'Posts about ' + tag + '.' }}_
 
 <ul class="listing">
 {%- for page in collections[tag] | reverse -%}
@@ -16,7 +25,7 @@ layout: layouts/base.njk
     <ul class="post-tags">
       {%- for tag in page.data.tags -%}
         {%- if tag !== 'post' -%}
-          <li><a href="/tags/{{ tag }}">#{{ tag }}</a></li>
+          <a href="/tags/{{ tag }}">#{{ tag }}</a>{{ '' if loop.last else ', ' }}
         {%- endif -%}
       {%- endfor -%}
     </ul>
