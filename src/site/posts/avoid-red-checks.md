@@ -1,7 +1,7 @@
 ---
-title: Crafting GitHub PR Experiences
-description: Avoid frustrating developers when designing your GitHub PR checks.
-date: 2021-02-28
+title: Avoid Red Checks
+subtitle: (Unless you need the developer to do something about it.)
+date: 2021-03-08
 tags: [wip]
 ---
 
@@ -15,9 +15,9 @@ Compare it to this screenshot, which _can_ be merged, because it has failed a no
 
 ![Example of a non-blocking error](pr-nonblocking-errors.png)
 
-Developers are still _users_, and users are notorious for not reading anything that's on the screen. After fielding countless questions from developers on many teams, I've decided that most people simply will not see that little **(Required)** tag next to the checks -- the only thing they are going to see is that the **Squash and merge** button is red, and then, if you're lucky, they'll try to figure out how to turn any red checks they see into green checks. (If you're unlucky, then it's straight to your team's Slack support channel.)
+Developers are still _users_, and users are looking for the information they believe they need on the screen. After fielding countless questions from developers on many teams, I've decided that most people simply will not see that little **(Required)** tag next to the checks -- the only thing they are going to see is that the **Squash and merge** button is red, and then, if you're lucky, they'll try to figure out how to turn any red checks they see into green checks. (If you're unlucky, then it's straight to your team's Slack support channel.)
 
-Takeaway: _never_ present a developer with something red, unless you truly intend to block their progress. A red error that "sometimes" isn't really an error only frustrates your user and makes them trust your pipeline less, something you want to avoid at all costs.
+Takeaway: _never_ present a developer with something red, unless you truly intend to block their progress. A big red X that "sometimes" isn't actually an error only frustrates your user and makes them trust your pipeline less, something you want to avoid at all costs.
 
 ---
 
