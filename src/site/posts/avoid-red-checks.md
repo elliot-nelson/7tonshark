@@ -1,6 +1,7 @@
 ---
 title: Avoid Red Checks
 subtitle: (Unless you need the developer to do something about it.)
+description: (Unless you need the developer to do something about it.)
 date: 2021-03-08
 tags: [post, cicd]
 ---
