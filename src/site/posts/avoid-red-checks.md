@@ -2,7 +2,7 @@
 title: Avoid Red Checks
 subtitle: (Unless you need the developer to do something about it.)
 date: 2021-03-08
-tags: [wip]
+tags: [post, cicd]
 ---
 
 Part of building a working CI pipeline is deciding what checks should block merges, and what checks are merely informational. If you're not careful, though, "informational" checks will do more harm than good.
