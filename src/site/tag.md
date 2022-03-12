@@ -10,7 +10,11 @@ layout: layouts/base.njk
   set tagDescriptions = {
     'cicd': 'Posts about CI/CD, pipelines, and build tools.',
     'dev': 'Posts about software development.',
-    'gamedev': 'Posts about amateur game development.'
+    'gamedev': 'Posts about amateur game development.',
+    'github': 'Posts about GitHub.',
+    'azure': 'Posts about Azure DevOps.',
+    'powershell': 'Posts about PowerShell.',
+    'bash': 'Posts about Bash.'
   }
 -%}
 <h1>#{{ tag }}</h1>

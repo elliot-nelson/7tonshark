@@ -1,6 +1,6 @@
 
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-
+const pluginEmbedTweet = require("eleventy-plugin-embed-tweet")
 
 module.exports = function(config) {
 
@@ -17,6 +17,9 @@ module.exports = function(config) {
   // add support for syntax highlighting
   config.addPlugin(syntaxHighlight);
 
+  // embed tweets
+  config.addPlugin(pluginEmbedTweet);
+
   // minify the html output
   config.addTransform("htmlmin", require("./src/utils/minify-html.js"));
 
@@ -31,8 +34,13 @@ module.exports = function(config) {
       return minified.code;
   });
 
+  // debugging
+  config.addNunjucksShortcode('dump', (thing) => {
+    console.log(thing);
+  });
+
   // Base site images
-  config.addPassthroughCopy('./src/site/images');
+  // config.addPassthroughCopy('./src/site/images');
 
   // make the seed target act like prod
   env = (env=="seed") ? "prod" : env;

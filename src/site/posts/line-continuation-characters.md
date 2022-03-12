@@ -1,8 +1,9 @@
 ---
 title: Line \ Continuation
 description: Examples of line continuation characters in Bash, Batch, and PowerShell.
+tweets: ['1498720510904918022']
 date: 2021-03-01
-tags: [post, cicd]
+tags: [post, cicd, bash, powershell]
 ---
 
 Examples of line continuation characters in Bash, Command (Batch) and PowerShell.

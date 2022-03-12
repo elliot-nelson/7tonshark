@@ -1,8 +1,8 @@
 {
-  "name": "EleventyOne",
+  "name": "7tonshark",
   "version": "3.0.0",
-  "description": "A project bootstrap for Eleventy sites. With pipelines for PostCSS, JavaScript, and serverless functions",
-  "author": "Phil Hawksworth",
+  "description": "The personal website of Elliot Nelson",
+  "author": "Elliot Nelson",
   "license": "MIT",
   "scripts": {
     "start": "npm run dev",
@@ -12,15 +12,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/philhawksworth/eleventyone"
+    "url": "https://github.com/elliot-nelson/7tonshark"
   },
   "dependencies": {
-    "@11ty/eleventy": "^0.8.3",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
+    "@11ty/eleventy": "^1.0.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
     "autoprefixer": "^9.6.0",
     "axios": "^0.21.1",
     "cssnano": "^4.1.10",
     "dotenv": "^8.0.0",
+    "eleventy-plugin-embed-tweet": "^0.3.1",
     "html-minifier": "^4.0.0",
     "luxon": "^1.16.0",
     "node-fetch": "^2.6.1",
