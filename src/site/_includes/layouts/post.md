@@ -7,15 +7,14 @@ templateEngineOverride: njk, md
 <p class="date">
   <time datetime="{{ date }}">{{ date | dateDisplay }}</time> ·
   <span>
-  {%- for post in collections.post -%}
-    {%- if page.url === post.url -%}
-      {%- for tag in post.data.tags -%}
-        {%- if tag !== 'post' -%}
-          <a href="/tags/{{ tag }}">#{{ tag }}</a>{{ '' if loop.last else ', ' }}
-        {%- endif -%}
-      {%- endfor -%}
-    {%- endif -%}
-  {%- endfor -%}
+  {%- set post = collections.post | getCollectionItem(page) -%}
+  {%- if post -%}
+    {%- for tag in post.data.tags -%}
+      {%- if tag !== 'post' -%}
+        <a href="/tags/{{ tag }}">#{{ tag }}</a>{{ '' if loop.last else ', ' }}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
   </span>
 </p>
 <main>

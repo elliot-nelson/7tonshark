@@ -1,14 +1,13 @@
 <footer>
-  {%- for post in collections.post -%}
-    {%- if page.url === post.url -%}
-      {%- if post.data.tweets -%}
-        <i style="text-align:center;display:block">Reply, retweet, or message me directly on Twitter:</i>
-        {%- for tweet_id in post.data.tweets -%}
-          {% tweet tweet_id %}
-        {%- endfor -%}
-      {%- endif -%}
+  {%- set post = collections.post | getCollectionItem(page) -%}
+  {%- if post -%}
+    {%- if post.data.tweets -%}
+      <i style="text-align:center;display:block">Reply, retweet, or message me directly on Twitter:</i>
+      {%- for tweet_id in post.data.tweets -%}
+        {% tweet tweet_id %}
+      {%- endfor -%}
     {%- endif -%}
-  {%- endfor -%}
+  {%- endif -%}
   <p style="text-align:center">
     &copy; Elliot Nelson ·
     Built with <a href="https://www.11ty.dev/">Eleventy</a> using the <a href="https://github.com/philhawksworth/eleventyone">EleventyOne</a> starter theme <br>
