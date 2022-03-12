@@ -34,13 +34,18 @@ module.exports = function(config) {
       return minified.code;
   });
 
+  config.addFilter('visibletag', (tag) => {
+    return !['post', 'wip', 'publish'].includes(tag);
+  });
+
   // debugging
   config.addNunjucksShortcode('dump', (thing) => {
     console.log(thing);
   });
 
   // Base site images
-  // config.addPassthroughCopy('./src/site/images');
+  //config.addPassthroughCopy('./src/site/images');
+  //config.addPassthroughCopy('*.png', '*.html');
 
   // make the seed target act like prod
   env = (env=="seed") ? "prod" : env;
@@ -53,7 +58,7 @@ module.exports = function(config) {
     templateFormats : ["njk", "md", "11ty.js", "html", "png"],
     htmlTemplateEngine : "njk",
     markdownTemplateEngine : "njk",
-    passthroughFileCopy: true
+    //passthroughFileCopy: true
   };
 
 };

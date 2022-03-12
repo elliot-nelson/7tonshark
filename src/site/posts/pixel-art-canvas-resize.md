@@ -1,6 +1,7 @@
 ---
 title: Scaling a pixel art game for the browser
-tags: [post, gamedev]
+description: How to show pixel-perfect graphics in the browser without stretching.
+tags: [publish, gamedev]
 date: 2020-11-08
 ---
 

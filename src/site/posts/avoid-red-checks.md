@@ -4,7 +4,7 @@ subtitle: (Unless you need the developer to do something about it.)
 description: (Unless you need the developer to do something about it.)
 tweets: ['1501300028333125640']
 date: 2021-03-08
-tags: [post, cicd, github]
+tags: [publish, cicd, github]
 ---
 
 Part of building a working CI pipeline is deciding what checks should block merges, and what checks are merely informational. If you're not careful, though, "informational" checks will do more harm than good.

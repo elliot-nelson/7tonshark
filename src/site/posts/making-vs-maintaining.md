@@ -1,7 +1,8 @@
 ---
 title: Making vs Maintaining
+description: What is the difference between making something and maintaining something?
 date: 2021-01-10
-tags: [post, dev]
+tags: [publish, dev]
 ---
 
 I'm convinced that there are two phases of software development: _making_ and _maintaining_. An application starts out in the making phase, and then after some period of time, slowly shifts to the maintaining phase. In my experience, this transition happens around 3-4 years after an application is launched.

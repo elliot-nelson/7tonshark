@@ -10,7 +10,7 @@ templateEngineOverride: njk, md
   {%- set post = collections.post | getCollectionItem(page) -%}
   {%- if post -%}
     {%- for tag in post.data.tags -%}
-      {%- if tag !== 'post' -%}
+      {%- if tag | visibletag -%}
         <a href="/tags/{{ tag }}">#{{ tag }}</a>{{ '' if loop.last else ', ' }}
       {%- endif -%}
     {%- endfor -%}

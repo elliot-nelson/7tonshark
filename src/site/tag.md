@@ -26,13 +26,13 @@ _{{ tagDescriptions[tag] or 'Posts about ' + tag + '.' }}_
   <li>
     <a href="{{ page.url }}">{{ page.data.title }}</a> -
     <time datetime="{{ page.date }}">{{ page.date | dateDisplay("LLLL d, y") }}</time> ·
-    <ul class="post-tags">
+    <span>
       {%- for tag in page.data.tags -%}
-        {%- if tag !== 'post' -%}
+        {%- if tag | visibletag -%}
           <a href="/tags/{{ tag }}">#{{ tag }}</a>{{ '' if loop.last else ', ' }}
         {%- endif -%}
       {%- endfor -%}
-    </ul>
+    </span>
   </li>
 {%- endfor -%}
 </ul>
