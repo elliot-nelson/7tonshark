@@ -3,7 +3,7 @@ title: Avoid Red Checks
 subtitle: (Unless you need the developer to do something about it.)
 description: (Unless you need the developer to do something about it.)
 tweets: ['1501300028333125640']
-date: 2021-03-08
+date: 2022-03-08
 tags: [publish, cicd, github]
 ---
 

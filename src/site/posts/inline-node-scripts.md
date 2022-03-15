@@ -3,7 +3,7 @@ title: Inline Node Scripts
 subtitle: Run inline node scripts in Azure DevOps pipelines.
 description: Run inline node scripts in Azure DevOps pipelines.
 tweets: ['1503829705228705795']
-date: 2021-03-15
+date: 2022-03-15
 tags: [publish, cicd, azure]
 ---
 
