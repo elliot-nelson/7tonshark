@@ -1,8 +1,9 @@
 ---
 title: Inline Node Scripts
 subtitle: Run inline node scripts in Azure DevOps pipelines.
+description: Run inline node scripts in Azure DevOps pipelines.
 date: 2021-03-15
-tags: [wip]
+tags: [publish, cicd, azure]
 ---
 
 Under normal circumstances, I'd recommend that any nodejs scripts used in your CI/CD pipelines be checked into the repository and run from your YAML pipeline using a normal node command, for example:
