@@ -2,6 +2,7 @@
 title: Custom Termination Policy w/CDK
 subtitle: Create a custom termination policy using the AWS CDK.
 description: Create a custom termination policy using the AWS CDK.
+tweets: ['1534248092307968003']
 date: 2022-06-07
 tags: [publish, cdk, typescript]
 ---
