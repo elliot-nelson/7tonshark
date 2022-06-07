@@ -14,7 +14,9 @@ layout: layouts/base.njk
     'github': 'Posts about GitHub.',
     'azure': 'Posts about Azure DevOps.',
     'powershell': 'Posts about PowerShell.',
-    'bash': 'Posts about Bash.'
+    'bash': 'Posts about Bash.',
+    'cdk': 'Posts about AWS CDK.',
+    'typescript': 'Posts about Typescript.'
   }
 -%}
 <h1>#{{ tag }}</h1>
