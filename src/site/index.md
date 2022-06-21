@@ -24,6 +24,7 @@ layout: layouts/base.njk
 
 ## Links around the web
 
+* [Dungeonomics](https://www.projectmultiplexer.com/category/dungeonomics/) by [Emily Dresner](https://twitter.com/multiplexer)
 * [V8 function optimization](https://erdem.pl/2019/08/v-8-function-optimization) by [Kemal Erdem](https://twitter.com/burnpiro)
 * [Are We Really Engineers?](https://www.hillelwayne.com/post/are-we-really-engineers/) by [Hillel Wayne](https://twitter.com/hillelogram)
 * [A Criticism of Scrum](https://www.aaron-gray.com/a-criticism-of-scrum/) by Aaron Gray
