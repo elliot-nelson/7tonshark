@@ -3,7 +3,7 @@ title: Ternary Operators in Azure DevOps
 subtitle: Mimic the ternary operator in an Azure DevOps pipeline.
 description: Mimic the ternary operator in an Azure DevOps pipeline.
 date: 2022-06-03
-tags: [cicd, azure]
+tags: [publish, cicd, azure]
 ---
 
 When authoring an Azure DevOps pipeline, I often want to reach for the ternary operator (`?:`), which unfortunately doesn't have a direct equivalent. For example, you might have a template parameter called `production`, and if it is `true`, you want the string `"--production"` inserted into the command line; if it isn't, you want nothing (`""`) inserted instead.
