@@ -2,7 +2,7 @@
 title: Ternary Operators in Azure DevOps
 subtitle: Mimic the ternary operator in an Azure DevOps pipeline.
 description: Mimic the ternary operator in an Azure DevOps pipeline.
-date: 2022-06-03
+date: 2022-06-21
 tags: [publish, cicd, azure]
 ---
 
