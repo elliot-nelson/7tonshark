@@ -257,3 +257,11 @@ div.twitter-tweet {
   margin-right: auto;
   padding-bottom: 1.25em;
 }
+
+ol li {
+  margin-left: 1em;
+}
+
+ul li {
+  margin-left: 1em;
+}
