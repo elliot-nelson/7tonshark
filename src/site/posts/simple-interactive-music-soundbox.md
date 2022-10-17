@@ -14,7 +14,7 @@ There are [different ways to make music interactive](https://gamedev.stackexchan
 
 By default, the SoundBox player builds the entire song and gives it to us as an audio buffer. If we're going to control the volume (_gain_) on individual tracks, we need to change that.
 
-In the top section, we'll add a new array to hold our channel buffers:
+In the top section of [player-small.js](https://sb.bitsnbites.eu/player-small.js), we'll add a new array to hold our channel buffers:
 
 ```javascript
     var mSong, mLastRow, mCurrentCol, mNumWords, mMixBuf, mChannelBufs;
