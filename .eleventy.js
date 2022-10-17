@@ -55,7 +55,7 @@ module.exports = function(config) {
       output: "dist",
       data: `_data/${env}`
     },
-    templateFormats : ["njk", "md", "11ty.js", "html", "png", "js", "ico"],
+    templateFormats : ["njk", "md", "11ty.js", "html", "png", "js", "ico", "webmanifest", "xml", "svg"],
     htmlTemplateEngine : "njk",
     markdownTemplateEngine : "njk",
     //passthroughFileCopy: true
