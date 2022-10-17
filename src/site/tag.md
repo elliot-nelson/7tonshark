@@ -16,7 +16,8 @@ layout: layouts/base.njk
     'powershell': 'Posts about PowerShell.',
     'bash': 'Posts about Bash.',
     'cdk': 'Posts about AWS CDK.',
-    'typescript': 'Posts about Typescript.'
+    'typescript': 'Posts about Typescript.',
+    'js13k': 'Posts about the js13k games competition.'
   }
 -%}
 <h1>#{{ tag }}</h1>

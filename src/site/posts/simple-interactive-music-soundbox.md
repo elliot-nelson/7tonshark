@@ -352,13 +352,13 @@ window.Audio = {
   <p><i>(Music may take 3-4 seconds to start playing, please be patient.)</i></p>
 </blockquote>
 
-Nice... now every time that enemy appears on screen, the combat music is going to start out with that strong F# note.
+Nice... now every time an enemy appears on screen, the combat music is going to start out with that strong F# note.
 
 ## Going further
 
 This is where I ended my experiment, but there are other cool things you could do here.
 
-Right now, all of my tracks are playing all the time in the background. You don't _have_ to do it this way -- in theory we could have the wave track ready to play, but not started yet. Because tracks 1-5 are ambient, they don't have to line up pattern-to-pattern with Track 7 (the "wave") track -- we could get away with only lining up on note length. (You would still want to use the sequence calculationg we did above when starting Track 6, the combat track).
+Right now, all of my tracks are playing all the time in the background. You don't _have_ to do it this way -- in theory we could have the wave track ready to play, but not started yet. Because tracks 1-5 are ambient, they don't have to line up pattern-to-pattern with Track 7 (the "wave") track -- we could get away with only lining up on note length. (You would still want to use the sequence calculation we did above when starting Track 6, the combat track).
 
 This type of approach would work great for a game with enemy encounters -- think of Final Fantasy style combat. You could cut from a peaceful exploration song to a fight song, and as long as both are the same BPM and you calculate a note start time, you can do a dramatic instant cutover and it won't sound jarring.
 
