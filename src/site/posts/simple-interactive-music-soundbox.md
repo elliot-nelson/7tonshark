@@ -2,7 +2,8 @@
 title: Simple interactive music with SoundBox
 description: Fade in and out individual tracks of a SoundBox song to make your game feel more interactive.
 tags: [publish, gamedev, js13k]
-date: 2022-10-08
+tweets: ['1582061043244638208']
+date: 2022-10-17
 ---
 
 For my [2022 js13k entry](/posts/making-of-js13k-2022-moth), I used the [SoundBox](https://sb.bitsnbites.eu/) tracker to compose my background music -- really just an ambient background loop, a few long wind noises and some random percussion. I've wanted for a while to make a game with music that was more interactive, and this year's entry is the perfect time to try it.
