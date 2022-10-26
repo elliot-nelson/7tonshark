@@ -2,6 +2,7 @@
 title: Avoid lockfile conflicts in Rush
 subtitle: Fix pnpm-lock conflicts forever in your Rush monorepo.
 description: Fix pnpm-lock conflicts forever in your Rush monorepo.
+tweets: ['1585063310441197568']
 tags: [publish, rushjs, monorepo]
 date: 2022-10-25
 ---
