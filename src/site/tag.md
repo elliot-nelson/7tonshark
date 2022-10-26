@@ -17,7 +17,9 @@ layout: layouts/base.njk
     'bash': 'Posts about Bash.',
     'cdk': 'Posts about AWS CDK.',
     'typescript': 'Posts about Typescript.',
-    'js13k': 'Posts about the js13k games competition.'
+    'js13k': 'Posts about the [js13kgames](https://js13kgames.com/) competition.',
+    'rushjs': 'Posts about working with [Rush](https://rushjs.io/) monorepos or [Rush Stack](https://rushstack.io/) build tooling.',
+    'monorepo': 'Posts about maintaining, and collaborating in, large-scale monorepos.'
   }
 -%}
 <h1>#{{ tag }}</h1>
