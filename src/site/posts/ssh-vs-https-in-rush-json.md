@@ -2,6 +2,7 @@
 title: SSH vs HTTPS URLs in Rush config files
 subtitle: Support both SSH and HTTPS URLs in your rush.json repository configuration.
 description: Support both SSH and HTTPS URLs in your rush.json repository configuration.
+tweets: ['1593327379354640384']
 tags: [publish, rushjs, monorepo]
 date: 2022-11-17
 ---
