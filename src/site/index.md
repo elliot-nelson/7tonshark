@@ -7,7 +7,7 @@ layout: layouts/base.njk
 ## Recent posts
 
 <ul class="listing">
-{%- for page in collections.publish.slice(0, 10) | reverse -%}
+{%- for page in collections.publish | reverse -%}
   <li>
     <a href="{{ page.url }}">{{ page.data.title }}</a> -
     <time datetime="{{ page.date }}">{{ page.date | dateDisplay("LLLL d, y") }}</time> ·
