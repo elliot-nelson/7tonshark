@@ -55,7 +55,7 @@ Now running `git pull` will automatically pull down the pull request branches, a
 git checkout pr/2896
 ```
 
-This does automatically set up remotes for you, so you can't interact directly with the other contributor's remote (like pushing commits to it) unless you set up the remote separately.
+This does not automatically set up remotes for you, so you can't interact directly with the other contributor's remote (like pushing commits to it) unless you set up the remote separately.
 
 ## GUI Options
 
