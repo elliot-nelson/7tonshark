@@ -2,9 +2,9 @@
 title: Checking out fork branches
 subtitle: Easily checkout remote forked branches in a public repo.
 description: Easily checkout remote forked branches in a public repo.
-tweets: ['1503829705228705795']
+tweets: ['1600948860255600640']
 date: 2022-12-08
-tags: [publish, cicd, dev]
+tags: [publish, dev]
 ---
 
 If you're an open source maintainer, or just an interested developer that wants to try out the changes in a pull request submitted by another contributor, it is now incredibly simple.
