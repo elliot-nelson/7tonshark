@@ -2,7 +2,7 @@
 title: Enabling Python on new Macs
 subtitle: How to fix the "missing Python 2.7" problem on new machines.
 description: How to fix the "missing Python 2.7" problem on new machines.
-xtweets: ['1503829705228705795']
+tweets: ['1609965125053845505']
 date: 2023-01-03
 tags: [publish, dev]
 ---
