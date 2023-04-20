@@ -4,7 +4,7 @@ subtitle: Delegate ownership of your monorepo's GitHub Actions pull request pipe
 description: Delegate ownership of your monorepo's GitHub Actions pull request pipeline.
 xtweets: ['1609965125053845505']
 date: 2023-04-13
-tags: [publish2, rushjs2, monorepo2]
+tags: [publish, rushjs, monorepo]
 ---
 
 When you start a new [Rush](https://rushjs.io) monorepo, your pull request pipeline typically starts with just one job -- the one that runs `rush build` (or `rush test`, once you've configured phased builds). Over time, though, you inevitably begin to accumulate other jobs -- tests that run on Mac or Windows, visual regression tests, infrastructure or content deployment planning jobs, etc.
