@@ -3,7 +3,7 @@ title: The "PR Ready" Pattern
 subtitle: Delegate ownership of your monorepo's GitHub Actions pull request pipeline.
 description: Delegate ownership of your monorepo's GitHub Actions pull request pipeline.
 tweets: ['1649144569714581505']
-date: 2023-04-13
+date: 2023-04-20
 tags: [publish, rushjs, monorepo]
 ---
 
