@@ -3,8 +3,8 @@ title: Ternary Operators in GitHub Actions
 subtitle: How to mimic the ternary operator in GitHub Actions, and how to use it safely.
 description: How to mimic the ternary operator in GitHub Actions, and how to use it safely.
 xtweets: ['1539342191415508993']
-date: 2023-04-23
-tags: [publish-pending, cicd-pending, github-pending]
+date: 2023-04-28
+tags: [publish, cicd, github]
 ---
 
 About a year ago I wrote a post on how to mimic [ternary operators in Azure DevOps](https://7tonshark.com/posts/azure-ternary-operator/), and since I've been using a lot of GitHub Actions lately, I thought I'd do a similar post now. It turns out although a fake ternary operator is easy to construct in GitHub Actions, using it safely requires some caution.
@@ -72,7 +72,7 @@ Note that the strings `'false'` and `'true'` are both truthy, so in the _special
 
 In a GitHub Actions workflow, the inputs are part of the `workflow_dispatch` event. This means _all your inputs_ are undefined (null) if the workflow is triggered by a pull request, a push, or a scheduled trigger. This can be very confusing, especially if you've specified `default:` values for your inputs, because they _won't be honored_ when the workflow is triggered by one of these events.
 
-This situation is made worse because of GitHub's conversion logic: in the situation where the input is undefined, all of the following comparisons return true:
+This situation is made worse because of GitHub's conversion logic. In the situation where the input is undefined, all of the following comparisons return true:
 
 ```bash
     steps:
