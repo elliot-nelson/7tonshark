@@ -2,7 +2,7 @@
 title: Ternary Operators in GitHub Actions
 subtitle: How to mimic the ternary operator in GitHub Actions, and how to use it safely.
 description: How to mimic the ternary operator in GitHub Actions, and how to use it safely.
-xtweets: ['1539342191415508993']
+tweets: ['1652027723160641537']
 date: 2023-04-28
 tags: [publish, cicd, github]
 ---
