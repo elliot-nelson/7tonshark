@@ -112,3 +112,7 @@ steps:
 {% endraw %}
 
 Hopefully, one of these examples works for your situation.
+
+---
+
+> _Also see: [Ternary Operators in GitHub Actions](https://7tonshark.com/posts/github-actions-ternary-operator/)._
