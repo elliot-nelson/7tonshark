@@ -3,8 +3,8 @@ title: Robust remote caching with Rush
 subtitle: Use Rush's remote caching effectively in your CI pipeline.
 description: Use Rush's remote caching effectively in your CI pipeline.
 xtweets: ['1649144569714581505']
-date: 2023-04-20
-tags: [publish-pending, rushjs-pending, monorepo-pending]
+date: 2023-05-04
+tags: [publish, rushjs, monorepo]
 ---
 
 As you scale out a new Rush monorepo, one of the first and most important things to get working is your [remote build cache](https://rushjs.io/pages/maintainer/build_cache/) -- without it, build times (both for local developers and your CI system) will quickly become unmanageable.
@@ -100,13 +100,15 @@ If your monorepo is merging 5+ PRs an hour, this means that you'll _always_ be r
 
 The way to fix this problem is to _always write the cache_. Turn on `RUSH_BUILD_CACHE_WRITE_ALLOWED` in your pull request workflow, and make sure your pull request workflow has both a `Build` and a `Build - Warm cache` job. This way, every time a PR merges to main, all of the cache entries for the modified projects are already in the cache. A local developer who pulls latest immediately after a merge and runs `rush test` will see exactly what they expect -- they have no local changes, so everything should immediately pull from cache.
 
-> Taking this step can seem a bit scary, but is actually totally safe _as long as_ your project builds are deterministic. If some or all of your project builds are not deterministic, then that is a problem you will need to tackle anyway! I have some suggestions on how to do that further down in this post.
+> Taking this step can seem a bit scary, but is totally safe as long as your project builds are deterministic. If some of your projects are not building deterministically, then this is an issue you'll have to solve eventually!
 
 ## Handling phased builds properly
 
-Once you're done with the initial configuration changes, enabling [phased builds](https://rushjs.io/pages/maintainer/phased_builds/) is typically pretty simple. However, it's very easy for subtle configuration issues to slip through the cracks, and you won't notice them until you've enable remote build caching, phased builds, _and_ pull request cache writing together.
+Once you're done with the initial configuration changes, enabling [phased builds](https://rushjs.io/pages/maintainer/phased_builds/) is typically pretty simple. However, it's very easy for subtle configuration issues to slip through the cracks. In particular, there are some gaps in your phased build definitions that might be invisible to you until _after_ you enable both remote build caching and pull request cache writes.
 
 This is likely the first time that it's possible, due to overlapping builds, for your CI system to attempt to run phases of a build on different machines. For example, one build may write the cache entry for the `_build` phase of a project, while another machine picks up this cache entry and tries to run the `_test` phase. If there are any gaps in the _build inputs and build outputs_ of your projects, this is where you'll start running into them.
+
+![Overlapping PR builds](remote-cache-run.png)
 
 A very common example is forgetting to add the `.heft/` folder as a build output for Heft-based projects. For example, in your `rush-project.json`:
 
@@ -138,3 +140,5 @@ You may have other such "special folders" in your own repo, so keep on the looko
 Recently at my company, we've been experimenting with GitHub's new [Merge Queue](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue).
 
 I'll write more about that experience in a future post, but an interesting aspect of the merge queue for caching is that it lives in between a pull request and a post-merge job. You could choose to turn on cache writing _only_ for the `merge_group` event and not the `pull_request` event in your workflow. This would provide a bit of extra protection, because PRs won't enter the merge queue until after all builds are passing green and a coworker has reviewed the changes, _but_, you still get the benefit of having the updated cache entries ready to go when the commit hits the main branch.
+
+If anyone's tried this, I'd be interested in hearing how it went!
