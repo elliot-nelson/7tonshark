@@ -2,7 +2,7 @@
 title: Robust remote caching with Rush
 subtitle: Use Rush's remote caching effectively in your CI pipeline.
 description: Use Rush's remote caching effectively in your CI pipeline.
-xtweets: ['1649144569714581505']
+tweets: ['1654208667757993985']
 date: 2023-05-04
 tags: [publish, rushjs, monorepo]
 ---
