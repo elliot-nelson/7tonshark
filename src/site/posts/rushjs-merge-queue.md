@@ -4,7 +4,7 @@ subtitle: Lessons learned enabling GitHub's Merge Queue on our Rush monorepo.
 description: Lessons learned enabling GitHub's Merge Queue on our Rush monorepo.
 xtweets: ['1649144569714581505']
 date: 2023-05-25
-tags: [publish-pending, rushjs-pending, monorepo-pending]
+tags: [publish, rushjs, monorepo]
 ---
 
 We've had GitHub's [merge queue](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue) feature enabled on our [Rush](https://rushjs.io) monorepo for a little over a month now, and overall it's been a great experience.
@@ -21,9 +21,9 @@ If you have several people merging pull requests into your repo, and they haven'
 
 The _Require branches to be up to date before merging_ setting puts a hard-stop to this: the second developer cannot merge until they pull in the very latest changes, which requires a new pull request build. Checking this box can drop CI-breaking incidents in main to nearly zero.
 
-In a monorepo, however, this box has a massive cost: if you are peaking at 10 or 15 pull requests merged per hour, and every time someone merges everyone else has to merge latest, you end up with all the developers crammed against the gate, trying to get the lucky lottery ticket to be "first". Whoever wins, gets merged; all the losers have to manually pull in latest, sip coffee for 15-20 minutes, and then try to enter the lottery again.
+In a monorepo, however, this box has a massive cost. If you are peaking at 10 or 15 pull requests merged per hour, and every time someone merges everyone else is forced to merge latest, you end up with all the developers crammed against the gate, trying to get the lucky lottery ticket to be "first". Whoever wins, gets merged; everyone else has to manually pull in latest, sip coffee for 15-20 minutes, and then try to enter the lottery again.
 
-A merge queue solves this problem: instead of each developer attempting to be next to merge, they can _all_ "join the merge queue" and then leave for lunch. GitHub's promise is that it will take each PR in the queue, merge it with latest from main, run your workflow, and then merge it _to_ main only if it passes. All of the queued up PRs will eventually merge to main, with those failing any checks being ejected from the queue for the developer to re-examine.
+A merge queue solves this problem: instead of each developer attempting to be next to merge, they can _all_ join the merge queue and then leave for lunch. GitHub's promise is that it will take each PR in the queue, merge it with latest from main, run your workflow, and then merge it to main only if it passes. All of the queued PRs will eventually merge to main, with those failing checks being ejected from the queue for the developer to re-examine.
 
 ## Triggering merge queue builds
 
