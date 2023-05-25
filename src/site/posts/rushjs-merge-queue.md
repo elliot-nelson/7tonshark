@@ -2,7 +2,7 @@
 title: 30 Days of Merge Queue
 subtitle: Lessons learned enabling GitHub's Merge Queue on our Rush monorepo.
 description: Lessons learned enabling GitHub's Merge Queue on our Rush monorepo.
-xtweets: ['1649144569714581505']
+tweets: ['1661845124169584641']
 date: 2023-05-25
 tags: [publish, rushjs, monorepo]
 ---
