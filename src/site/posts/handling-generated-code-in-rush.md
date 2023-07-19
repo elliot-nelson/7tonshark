@@ -2,8 +2,8 @@
 title: Handling generated code in Rush
 subtitle: Handle generated code correctly in your Rush monorepo.
 description: Handle generated code correctly in your Rush monorepo.
-tweets: ['1654208667757993985']
-date: 2023-07-14
+tweets: ['1681744734862159872']
+date: 2023-07-19
 tags: [publish, rushjs, monorepo]
 ---
 
