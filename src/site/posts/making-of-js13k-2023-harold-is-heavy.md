@@ -26,6 +26,8 @@ And here are the tools used:
 - Sound effects generated with [zzfx](https://killedbyapixel.github.io/ZzFX/)
 - Music created using [Sound Box](https://sb.bitsnbites.eu/)
 
+![Screenshot of Harold is Heavy](screenshot2.png)
+
 ## The Checklist
 
 As with every year, I didn't know the what the theme would be until the competition began, but I had a list of things I was hoping to accomplish:
@@ -98,6 +100,8 @@ I ended up with the following guidelines:
  - This rule has to be broken if the player will just be "stuck" -- so on level 1 I make sure the first signs tell you how to move, and on level 3 I kind of hedge my bets (the player _might_ try to squeeze through the 1-high gap, or might immediately climb up to the sign, but either way they will know what to do next).
 
 The signs ended up being a nice trade-off here. Unlike a "tutorial pop-up", a player can choose to run past a sign; but, it also gives players the freedom to go back and re-read the information again if they missed it. A sign is also an object in a level, so when the player sees a sign, they know that additional information is coming.
+
+![Harold reading a sign](screenshot1.png)
 
 > Back in 2020, I used the tutorial pop-up approach in [WIZARD WITH A SHOTGUN](https://github.com/elliot-nelson/js13k-2020-wizard-with-a-shotgun). Now that I've tried both, I think the player experience with signs is way better, so I'll be looking for ways to incorporate a similar experience in future entries!
 
