@@ -39,7 +39,7 @@ You put these goals together and you've got: a fun, colorful platformer, that's 
 
 ## The visuals
 
-I had a great time Last year building within a specific palette, so I decided to do it again this year.
+I had a great time last year building within a specific palette, so I decided to do it again this year.
 
 I experimented with a large number of 16-color palettes, but eventually settled on [Indecision](https://lospec.com/palette-list/indecision) by [Nelson SMG](https://twitter.com/Warxwell) - the off-white and off-black and bright, flat colors seemed perfect for this project.
 
