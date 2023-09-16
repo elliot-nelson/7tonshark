@@ -21,6 +21,8 @@ layout: layouts/base.njk
 
 ## js13k Game Projects
 
+* [Harold is Heavy](https://github.com/elliot-nelson/js13k-2023-harold-is-heavy) was my 2023 entry for #js13k. A silly, colorful platformer about landing on enemies and rescuing friends. Also see my [post-jam blog post](/posts/making-of-js13k-2023-harold-is-heavy) about this game.
+
 * [Moth](https://github.com/elliot-nelson/js13k-2022-moth) was my 2022 entry for #js13k. So far, I think, this is my best-looking game, with nice blocky pixel art and a clearly defined palette. For more thoughts, check out my [post-jam blog post](/posts/making-of-js13k-2022-moth/).
 
 * [Shadow of the Keening Star](https://github.com/elliot-nelson/js13k-2021-keening-star) was my 2021 entry for #js13k. This was a lot of fun, it's a short ASCII roguelike plus text-based adventure game, which has a lot of promise. If I ever get the time, I'd enjoy sprucing up the music and sound effects and mapping out a bunch more of the story, I found it surprisingly compelling once it was all put together.
