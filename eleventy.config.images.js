@@ -14,11 +14,14 @@ module.exports = eleventyConfig => {
 	eleventyConfig.addAsyncShortcode("image", async function imageShortcode(src, alt, widths, sizes) {
 		// Full list of formats here: https://www.11ty.dev/docs/plugins/image/#output-formats
 		// Warning: Avif can be resource-intensive so take care!
-		let formats = ["avif", "webp", "auto"];
+		let formats = [/*"avif",*/ "webp", "auto"];
 		let file = relativeToInputPath(this.page.inputPath, src);
 		let metadata = await eleventyImage(file, {
 			widths: widths || ["auto"],
 			formats,
+			sharpOptions: {
+				animated: true
+			},
 			outputDir: path.join(eleventyConfig.dir.output, "img"), // Advanced usage note: `eleventyConfig.dir` works here because we’re using addPlugin.
 		});
 
@@ -30,5 +33,22 @@ module.exports = eleventyConfig => {
 			decoding: "async",
 		};
 		return eleventyImage.generateHTML(metadata, imageAttributes);
+	});
+
+	eleventyConfig.addAsyncShortcode("imageUrl", async function imageUrlShortcode(src, alt, widths, sizes) {
+		// Full list of formats here: https://www.11ty.dev/docs/plugins/image/#output-formats
+		// Warning: Avif can be resource-intensive so take care!
+		let formats = [/*"avif",*/ "webp", "auto"];
+		let file = relativeToInputPath(this.page.inputPath, src);
+		let metadata = await eleventyImage(file, {
+			widths: widths || ["auto"],
+			formats,
+			sharpOptions: {
+				animated: true
+			},
+			outputDir: path.join(eleventyConfig.dir.output, "img"), // Advanced usage note: `eleventyConfig.dir` works here because we’re using addPlugin.
+		});
+
+		return metadata.png[0].url;
 	});
 };

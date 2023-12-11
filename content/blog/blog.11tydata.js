@@ -3,5 +3,5 @@ module.exports = {
 		"posts"
 	],
 	"layout": "layouts/post.njk",
-	"permalink": "{{ title | slug }}"
+	"permalink": "{{ page.fileSlug | slug }}/"
 };

@@ -1,6 +1,6 @@
 ---
-layout: "layouts/post.njk"
-permalink: "h4"
+layout: false
+permalink: pixel-art-canvas-resize/example4.html
 tags: [example]
 ---
 <style>
@@ -28,7 +28,7 @@ const Game = {
 
         // Load our "game grid" image
         Game.image = new Image();
-        Game.image.src = '../grid.png';
+        Game.image.src = '{% imageUrl "./grid.png" %}';
 
         // Request first frame
         Game.image.onload = () => {
