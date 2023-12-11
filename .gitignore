@@ -1,15 +1,3 @@
-# dependencies installed by npm
-/node_modules
-
-# build artefacts
-/dist
-/src/site/_includes/css
-
-# secrets and errors
-.env
-/yarn-error.log
-
-# macOS related files
-.DS_Store
-.AppleDouble
-.LSOverride
+_site/
+node_modules/
+package-lock.json

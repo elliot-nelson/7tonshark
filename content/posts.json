@@ -1,0 +1,6 @@
+{
+  "layout" : "layouts/post3.md",
+  "tags" : "post",
+  "templateEngineOverride": "njk,md",
+  "permalink": "frogdick/{{ title | slug }}"
+}
