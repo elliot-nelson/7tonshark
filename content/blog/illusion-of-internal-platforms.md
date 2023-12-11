@@ -5,6 +5,7 @@ description: Internal customers aren't the same as external customers, and neith
 xtweets: ['1609965125053845505']
 date: 2023-01-08
 tags: [publish2, dev2]
+draft: true
 ---
 
 In large companies, it's natural for teams to develop around a particular library or internal service. Often there's a temptation for these teams to treat their own library, or service, or API, as a "platform" -- a product to be consumed by their internal customers, just like an external customer would consume an API. In fact, the comparison is often explicit... "it's just like Stripe, or Twilio, but it's internal instead of external".
