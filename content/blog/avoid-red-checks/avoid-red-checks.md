@@ -11,11 +11,11 @@ Part of building a working CI pipeline is deciding what checks should block merg
 
 In this screenshot, we have a GitHub pull request that cannot merge because it has failed a required check:
 
-![Example of a blocking error](pr-blocking-errors.png)
+{% image "./pr-blocking-errors.png", "Example of a blocking error" %}
 
 Compare it to this screenshot, which _can_ be merged, because it has failed a non-required (or "non-blocking") check:
 
-![Example of a non-blocking error](pr-nonblocking-errors.png)
+{% image "./pr-nonblocking-errors.png", "Example of a non-blocking error" %}
 
 Developers are still _users_, and users are looking for the information they believe they need on the screen. After fielding countless questions from developers on many teams, I've decided that most people simply will not see that little **(Required)** tag next to the checks -- the only thing they are going to see is that the **Squash and merge** button is red, and then, if you're lucky, they'll try to figure out how to turn any red checks they see into green checks. (If you're unlucky, then it's straight to your team's Slack support channel.)
 
@@ -25,11 +25,11 @@ Takeaway: _never_ present a developer with something red, unless you truly inten
 
 In contrast, let's compare two different screenshots. First, here's an "all green" pull request, ready to go:
 
-![Something](pr-all-green.png)
+{% image "./pr-all-green.png", "Pull request merge button" %}
 
 And here's another pull request that's ready to go, but with a check that was skipped instead of successful:
 
-![Something](pr-nonsuccessful.png)
+{% image "./pr-nonsuccessful.png", "Pull request greyed out button" %}
 
 In the second screenshot, there's a lot of additional context and text to read on the screen, but because there is nothing _red_ on the screen, the developer intuitively knows that there's nothing for them to fix. There's no guarantee they'll read the context you've provided, but at least they won't be left wondering whether or not it's OK for them to merge.
 
