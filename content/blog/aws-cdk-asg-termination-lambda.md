@@ -4,7 +4,7 @@ subtitle: Create a custom termination policy using the AWS CDK.
 description: Create a custom termination policy using the AWS CDK.
 tweets: ['1534248092307968003']
 date: 2022-06-07
-tags: [publish, cdk, typescript]
+tags: [cdk, typescript]
 ---
 
 One of the features AWS offers for Auto Scaling Groups is the ability to create a [Custom Termination Policy](https://docs.aws.amazon.com/autoscaling/ec2/userguide/lambda-custom-termination-policy.html), by providing a Lambda Function that will be called when your ASG wants to scale in.

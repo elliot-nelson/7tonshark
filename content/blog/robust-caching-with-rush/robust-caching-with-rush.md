@@ -108,7 +108,7 @@ Once you're done with the initial configuration changes, enabling [phased builds
 
 This is likely the first time that it's possible, due to overlapping builds, for your CI system to attempt to run phases of a build on different machines. For example, one build may write the cache entry for the `_build` phase of a project, while another machine picks up this cache entry and tries to run the `_test` phase. If there are any gaps in the _build inputs and build outputs_ of your projects, this is where you'll start running into them.
 
-![Overlapping PR builds](remote-cache-run.png)
+{% image "./remote-cache-run.png", "Overlapping PR builds" %}
 
 A very common example is forgetting to add the `.heft/` folder as a build output for Heft-based projects. For example, in your `rush-project.json`:
 

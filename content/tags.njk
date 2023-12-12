@@ -11,10 +11,29 @@ pagination:
   addAllPagesToCollections: true
 layout: layouts/home.njk
 eleventyComputed:
-  title: Tagged “{{ tag }}”
+  title: #{{ tag }}
 permalink: /tags/{{ tag | slugify }}/
 ---
-<h1>Tagged “{{ tag }}”</h1>
+{%-
+  set tagDescriptions = {
+    'cicd': 'Posts about CI/CD, pipelines, and build tools.',
+    'dev': 'Posts about software development.',
+    'gamedev': 'Posts about amateur game development.',
+    'github': 'Posts about GitHub.',
+    'azure': 'Posts about Azure DevOps.',
+    'powershell': 'Posts about PowerShell.',
+    'bash': 'Posts about Bash.',
+    'cdk': 'Posts about AWS CDK.',
+    'typescript': 'Posts about Typescript.',
+    'js13k': 'Posts about the [js13kgames](https://js13kgames.com/) competition.',
+    'rushjs': 'Posts about working with [Rush](https://rushjs.io/) monorepos or [Rush Stack](https://rushstack.io/) build tooling.',
+    'monorepo': 'Posts about maintaining, and collaborating in, large-scale monorepos.'
+  }
+-%}
+<h1>#{{ tag }}</h1>
+<i>{{ tagDescriptions[tag] or 'Posts about ' + tag + '.' }}</i>
+
+<br/></br/>
 
 {% set postslist = collections[ tag ] %}
 {% include "postslist.njk" %}

@@ -9,7 +9,7 @@ For a browser game with a classic "pixel art" look, dealing with different brows
 
 As an example, let's say you have chosen to design a game with target dimensions of `480x270px` (a 16:9 ratio). I've created an example image of this size to use as a prop:
 
-![Example Game Grid](grid.png)
+{% image "./grid.png", "Example Game Grid" %}
 
 (Note: this image is actually a little larger than `480x270px` - I've included a `4px` red border. This will make it easier to highlight when what you are seeing on the canvas is "outside" of your original intended dimensions, which you'll notice in some of the later examples on this page.)
 

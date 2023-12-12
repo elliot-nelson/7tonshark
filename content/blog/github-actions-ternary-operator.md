@@ -4,7 +4,7 @@ subtitle: How to mimic the ternary operator in GitHub Actions, and how to use it
 description: How to mimic the ternary operator in GitHub Actions, and how to use it safely.
 tweets: ['1652027723160641537']
 date: 2023-04-28
-tags: [publish, cicd, github]
+tags: [cicd, github]
 ---
 
 About a year ago I wrote a post on how to mimic [ternary operators in Azure DevOps](https://7tonshark.com/posts/azure-ternary-operator/), and since I've been using a lot of GitHub Actions lately, I thought I'd do a similar post now. It turns out although a fake ternary operator is easy to construct in GitHub Actions, using it safely requires some caution.

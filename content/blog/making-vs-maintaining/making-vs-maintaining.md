@@ -7,7 +7,7 @@ tags: [publish, dev]
 
 I'm convinced that there are two phases of software development: _making_ and _maintaining_. An application starts out in the making phase, and then after some period of time, slowly shifts to the maintaining phase. In my experience, this transition happens around 3-4 years after an application is launched.
 
-![Maintaining starts after 3-4 years](timeline.png)
+{% image "./timeline.png", "Maintaining starts after 3-4 years" %}
 
 I call these phases, rather than types of work, because I'm not talking about the difference between bug fixing and adding features (an application will have both new features and bug fixes whether it's been around 30 days or 30 years). Rather, the maintaining phase is when an application gets heavy enough that you can see the results of past decisions. Decisions about what framework to choose, how to structure your database, where and what type of caching to do, patterns to use in your models, all of these decisions add up to a certain _heaviness_ that is just not visible when an application is only a couple years old.
 

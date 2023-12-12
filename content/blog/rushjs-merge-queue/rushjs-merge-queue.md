@@ -15,7 +15,7 @@ Before diving into specifics, let's cover what a merge queue _is_.
 
 If you've managed a traditional repo of any size in GitHub before, you're probably familiar with this gem in the Branch Protection settings:
 
-![Screenshot: Require branches to be up to date](require-up-to-date.png)
+{% image "./require-up-to-date.png", "Screenshot: Require branches to be up to date" %}
 
 If you have several people merging pull requests into your repo, and they haven't pulled the very latest version of the main branch (possibly from just minutes ago), there's a timing issue: the pull request may pass all unit tests, but after you merge, the main CI branch begins failing. This typically happens when two developers make conflicting changes (conflicting, not in a sense that will be detected by git, but in the sense that the API for a particular module or function is changed by one developer which breaks the changes being made by a different developer).
 
@@ -69,7 +69,7 @@ Later in the workflow, you can use this variable anywhere you'd refer to base_re
 
 Overall, the merge queue does exactly what it says on the tin: instead of a "Squash and merge" button, developers get a "Merge when ready" button. Clicking it drops you into the queue, where (in 15-20 minutes, assuming you're at top of queue) you'll merge into the main branch.
 
-![Screenshot: An empty merge queue screen](empty-merge-queue.png)
+{% image "./empty-merge-queue.png", "Screenshot: An empty merge queue screen" %}
 
 In addition, if you already have your PR approvals and are just waiting for your latest PR build to finish, you can click the "Merge when ready" button while it's still gray. Assuming your PR build succeeds, you'll automatically join the queue when it finishes. This type of "click the button and go for lunch" feature is a valuable time-saver for developers.
 
@@ -85,7 +85,7 @@ This issue, above, can be avoided to some degree by using GitHub's merge queue c
 
 Here's a screenshot of our current settings, arrived at by trial and error. Our preference is "normal", one-build-for-each-PR behavior, but allowing a little bit of batching to help get through the peak periods and avoid long queue times.
 
-![Screenshot: Merge queue settings](merge-queue-settings.png)
+{% image "./merge-queue-settings.png", "Screenshot: Merge queue settings" %}
 
 > Something to be aware of if you allow batching PRs: in your Push to Main CI workflow, although each PR merged will be added as its own commit, the "bundled" PRs don't show up as separate lines in your run history in the GitHub UI. This caused us some confusion a few times when we wanted to track down infrastructure jobs trigger by merged PRs, and we could see the commits in main but could not find the corresponding Push to Main workflow run. In these cases, the PR was "hidden" in a nearby run of the workflow. Keep this in mind if your Push to Main workflow does significant work that you sometimes troubleshoot.
 
