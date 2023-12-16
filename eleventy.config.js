@@ -1,5 +1,6 @@
 const { DateTime } = require("luxon");
 const markdownItAnchor = require("markdown-it-anchor");
+const markdownIt = require("markdown-it");
 
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
@@ -99,6 +100,14 @@ module.exports = function(eleventyConfig) {
 	// https://www.11ty.dev/docs/copy/#emulate-passthrough-copy-during-serve
 
 	// eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
+
+	const md = new markdownIt({
+	  html: true
+	});
+
+	eleventyConfig.addPairedShortcode("markdown", (content) => {
+	  return md.render(content);
+	});
 
 	return {
 		// Control which files Eleventy will process

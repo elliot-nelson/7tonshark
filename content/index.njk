@@ -3,7 +3,7 @@ layout: layouts/home.njk
 eleventyNavigation:
   key: Home
   order: 1
-numberOfLatestPostsToShow: 8
+numberOfLatestPostsToShow: 10
 ---
 {% set postsCount = collections.posts | length %}
 {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
@@ -13,6 +13,9 @@ numberOfLatestPostsToShow: 8
 {% if true %}
 <h1>7 ton shark</h1>
 <p>Welcome to the personal website of <a href="/about">Elliot Nelson</a>.
+<br/>
+<br/>
+<h2>Latest Posts</h2>
 {% endif %}
 
 {% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
@@ -32,3 +35,10 @@ numberOfLatestPostsToShow: 8
 	{%- endfor %}
 </ul>
 #}
+
+<br/>
+<br/>
+
+{% markdown %}
+	{%- include "./links.md" %}
+{% endmarkdown %}
