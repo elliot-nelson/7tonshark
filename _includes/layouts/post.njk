@@ -16,6 +16,24 @@ layout: layouts/base.njk
 
 {{ content | safe }}
 
+<!-- Embed Giscus Comments -->
+<script src="https://giscus.app/client.js"
+        data-repo="elliot-nelson/7tonshark"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkzMTA4NjI4OTg="
+        data-category="Announcements"
+        data-category-id="DIC_kwDOEodkMs4CbzN8"
+        data-mapping="pathname"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="dark"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+<!-- End Embed Giscus Comments -->
+
 {%- if collections.posts %}
 {%- set previousPost = collections.posts | getPreviousCollectionItem %}
 {%- set nextPost = collections.posts | getNextCollectionItem %}
