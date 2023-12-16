@@ -25,6 +25,8 @@
 	--text-color: var(--color-gray-90);
 	--text-color-link: #082840;
 	--text-color-link-active: #5f2b48;
+	--text-color-link-active: #2b2b9f;
+	--text-color-link-active: rgba(227, 61, 148, 1);
 	--text-color-link-visited: #17050F;
 
 	--syntax-tab-size: 2;
@@ -63,6 +65,7 @@ body {
 	background: rgb(244,226,220);
 	background: linear-gradient(110deg, rgba(244,226,220,1) 0%, rgba(244,238,220,1) 100%);
 	background: linear-gradient(110deg, rgba(244,238,220,1) 0%, rgba(244,226,220,1) 100%);
+	background: linear-gradient(110deg, rgba(254,248,230,1) 0%, rgba(254,236,230,1) 100%);
 }
 html {
 	overflow-y: scroll;
@@ -118,7 +121,7 @@ main :first-child {
 }
 
 header {
-	border-bottom: 1px dashed var(--color-gray-20);
+	border-bottom: 1px dashed var(--color-gray-50);
 }
 header:after {
 	content: "";
@@ -128,7 +131,7 @@ header:after {
 
 .links-nextprev {
 	list-style: none;
-	border-top: 1px dashed var(--color-gray-20);
+	border-top: 1px dashed var(--color-gray-50);
 	padding: 1em 0;
 }
 
@@ -147,6 +150,8 @@ code {
 	padding: 2px 3px;
 	color: #a04030;
 	color: #c06e4e;
+	color: #c06090;
+	color: rgba(227, 61, 148, 1);
 }
 pre:not([class*="language-"]) {
 	margin: .5em 0;
@@ -316,4 +321,63 @@ main picture img {
 	width: 100%;
 	height: auto;
 	border-radius: 4px;
+}
+
+main li {
+	padding-bottom: 0.6em;
+}
+
+
+/* https://github.com/tholman/github-corners */
+.github-corner:hover .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+}
+@keyframes octocat-wave {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    20% {
+        transform: rotate(-25deg);
+    }
+
+    40% {
+        transform: rotate(10deg);
+    }
+
+    60% {
+        transform: rotate(-25deg);
+    }
+
+    80% {
+        transform: rotate(10deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+@media (max-width: 500px) {
+    .github-corner:hover .octo-arm {
+        animation: none;
+    }
+
+    .github-corner .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+    }
+}
+
+.github-corner {
+    position: absolute;
+    top: 0;
+    border: 0;
+    right: 0;
+    opacity: 1;
+    transition: 2s ease;
+}
+
+.github-corner.hidden {
+    opacity: 0;
+    transition: 1s ease;
+    cursor: not-allowed;
 }

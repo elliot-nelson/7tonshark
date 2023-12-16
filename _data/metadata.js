@@ -1,5 +1,5 @@
 module.exports = {
-	title: "Eleventy Base Blog v8",
+	title: "7 ton shark",
 	url: "https://7tonshark.com/",
 	language: "en",
 	description: "I am writing about my experiences as a naval navel-gazer.",
