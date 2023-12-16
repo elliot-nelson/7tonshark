@@ -9,6 +9,7 @@
 	--color-gray-20: #e0e0e0;
 	--color-gray-50: #C0C0C0;
 	--color-gray-90: #363330;
+	--color-gray-90: #a0a0a0;
 
 	--background-color: #fffff0;
 	--background-color: #eeebe1;
@@ -22,12 +23,19 @@
 	/* try something else */
 	--background-color: #393939;
 
+	--background-color: #181818;
+
 	--text-color: var(--color-gray-90);
+	--text-color: #30f040;
+	--text-color: #f0f0f0;
 	--text-color-link: #082840;
+	--text-color-link: #30f040;
 	--text-color-link-active: #5f2b48;
 	--text-color-link-active: #2b2b9f;
 	--text-color-link-active: rgba(227, 61, 148, 1);
+	--text-color-link-active: rgba(237, 61, 148, 1);
 	--text-color-link-visited: #17050F;
+	--text-color-link-visited: #30e040;
 
 	--syntax-tab-size: 2;
 }
@@ -62,10 +70,10 @@ body {
 	color: var(--text-color);
 	background-color: var(--background-color);
 
-	background: rgb(244,226,220);
-	background: linear-gradient(110deg, rgba(244,226,220,1) 0%, rgba(244,238,220,1) 100%);
+	/*background: rgb(244,226,220);*/
+	/*background: linear-gradient(110deg, rgba(244,226,220,1) 0%, rgba(244,238,220,1) 100%);
 	background: linear-gradient(110deg, rgba(244,238,220,1) 0%, rgba(244,226,220,1) 100%);
-	background: linear-gradient(110deg, rgba(254,248,230,1) 0%, rgba(254,236,230,1) 100%);
+	background: linear-gradient(110deg, rgba(254,248,230,1) 0%, rgba(254,236,230,1) 100%);*/
 }
 html {
 	overflow-y: scroll;
@@ -78,6 +86,10 @@ body {
 h1 {
 	font-size: 3em;
 	margin-bottom: 16px;
+	color: #fff;
+}
+h2, h3, h4 {
+	color: #fff;
 }
 
 /* https://www.a11yproject.com/posts/how-to-hide-content/ */
@@ -143,15 +155,21 @@ table th {
 	padding-right: 1em;
 }
 
-pre,
 code {
 	font-family: var(--font-family-monospace);
+	background-color: #c9c9c9;
 	background-color: #e9e4e0;
 	padding: 2px 3px;
 	color: #a04030;
 	color: #c06e4e;
 	color: #c06090;
 	color: rgba(227, 61, 148, 1);
+	color: rgba(237, 61, 148, 1);
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
 }
 pre:not([class*="language-"]) {
 	margin: .5em 0;
@@ -279,7 +297,7 @@ header {
 }
 .post-metadata {
 	font-style: italic;
-	color: #4c4c4c;
+	color: #a0a0a0;
 	margin-bottom: 1.5em;
 }
 
@@ -313,6 +331,7 @@ main picture {
 	display: block;
 	max-width: calc(100% - 2em);
 	border: 1px solid rgba(0, 0, 0, 0.75);
+	border: 1px solid rgba(144, 144, 144, 0.75);
 	line-height: 0px;
 	border-radius: 4px;
 }
