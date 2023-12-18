@@ -355,6 +355,18 @@ main table td, main table th {
 	border: solid 1px #ccc;
 }
 
+footer {
+	border-top: 1px dashed var(--color-gray-50);
+	text-align: center;
+	padding-top: 1em;
+	padding-bottom: 2em;
+}
+footer:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
 
 /* https://github.com/tholman/github-corners */
 .github-corner:hover .octo-arm {
