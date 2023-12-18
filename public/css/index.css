@@ -346,6 +346,15 @@ main li {
 	padding-bottom: 0.6em;
 }
 
+main table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+main table td, main table th {
+	border: solid 1px #ccc;
+}
+
 
 /* https://github.com/tholman/github-corners */
 .github-corner:hover .octo-arm {
