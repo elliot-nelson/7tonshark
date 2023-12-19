@@ -11,17 +11,17 @@ This is my Dark Souls and Soulslikes appreciation page. I've always enjoyed vide
 
 There are many definitions of what a Soulslike is, but this is what I look for personally when thinking about this genre.
 
-## Combat Feel
-
-{% image "./demonsouls.png", "Vanguard Boss from Demon's Souls" %}
-
-Overall game and combat mechanics. The core of any Soulslike -- basic attacking, dodging, blocking/parrying needs to be solid and responsive, with as few quirks and edge cases as possible. Bonus points for interesting features or abilities go here too (e.g. the Spirit Ashes in Elden Ring or prosthetic arms in Sekiro and Lies of P).
-
 ## Vibes
 
 {% image "./upper-latria.png", "Upper Latria area from Demon Souls" %}
 
 My summary of how cool or fun the levels are, how interconnected the world is, how fun the bosses are, and so on. Bonus points for creative themes, levels that connect in interesting ways, enemy variety and creativity, unique boss encounters, and so on.
+
+## Combat Feel
+
+{% image "./demonsouls.png", "Vanguard Boss from Demon's Souls" %}
+
+Overall game and combat mechanics. The core of any Soulslike -- basic attacking, dodging, blocking/parrying needs to be solid and responsive, with as few quirks and edge cases as possible. Bonus points for interesting features or abilities go here too (e.g. the Spirit Ashes in Elden Ring or prosthetic arms in Sekiro and Lies of P).
 
 ## Heavy Metal
 
