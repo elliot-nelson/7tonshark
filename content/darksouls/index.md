@@ -1,15 +1,15 @@
 ---
 layout: layouts/base.njk
-#eleventyNavigation:
-#  key: Dark Souls
-#  order: 3
+eleventyNavigation:
+  key: Dark Souls
+  order: 4
 draft: true
 ---
 # Dark Souls
 
-This is my Dark Souls and Soulslikes appreciation page. I've always enjoyed video games, but Dark Souls and the genre that has sprung up around it scratches a particular gaming itch that really works for me.
+A Dark Souls and Soulslikes appreciation page!
 
-There are many definitions of what a Soulslike is, but this is what I look for personally when thinking about this genre.
+I've always enjoyed video games, but Dark Souls and the genre that has sprung up around it scratches a particular gaming itch that really works for me. There are many definitions of what a Soulslike is, but below I've listed what I look for personally when thinking about this genre.
 
 ## Vibes
 
