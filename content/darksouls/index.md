@@ -3,7 +3,6 @@ layout: layouts/base.njk
 eleventyNavigation:
   key: Dark Souls
   order: 4
-draft: true
 ---
 # Dark Souls
 
