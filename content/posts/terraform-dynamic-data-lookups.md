@@ -5,7 +5,7 @@ tags: [terraform]
 draft: true
 ---
 
-In a recent project, I had a series of reusable AWS WAF IPSets defined in one Terraform project. Then, in many separate Terraform projects, I want to use various combinations of these IPSets when creating WAFs for different websites.
+In a recent project, I had a series of reusable AWS WAF IPSets defined in one Terraform project. Then, in many separate Terraform projects, I wanted to use various combinations of these IPSets when creating WAFs for different websites.
 
 For each website, I have a simple JSON configuration file, and my goal was to add a section to this config file, like so:
 
@@ -62,6 +62,7 @@ Then, in theory, we could try to use these data resources by creating dynamic `r
 
       statement {
         ip_set_reference_statement {
+          # Next line is wrong...
           arn = data."shared-${rule.value}-ipv4".arn
         }
       }
@@ -80,6 +81,7 @@ Then, in theory, we could try to use these data resources by creating dynamic `r
 
       statement {
         ip_set_reference_statement {
+          # Next line is wrong...
           arn = data."moonbeam-${rule.value}-ipv6".arn
         }
       }
@@ -111,13 +113,6 @@ data "aws_wafv2_ip_set" "office-ipv6" {
 # locals.tf
 
 locals {
-  friendly_names = [
-    "office",
-    "vpn",
-    "vendorA",
-    "vendorB"
-  ]
-
   ipsets = {
     shared-office-ipv4  = data.aws_wafv2_ip_set.shared-office-ipv4
     shared-office-ipv6  = data.aws_wafv2_ip_set.shared-office-ipv6
@@ -164,15 +159,15 @@ module "shared-ipsets" {
 
 ```
 
-Success -- each of our Terraform website projects loads up our data resources and then builds IPSet reference rules for the ones used by this individual website.
+Success -- each of our Terraform website projects loads up our data resources and then builds IPSet reference rules for the ones used by that individual website.
 
 ## Attempt 3: Add a second module layer
 
 Although the last approach works just fine, one downside is that _each_ website loads up a data reference for every possible IPSet, even if that website won't attach that IPSet to its WAF. This isn't a big deal if there are only 4 IPSets, but as the list grows into 20-30 possibilities, it can begin to affect Terraform planning time and output size.
 
-We can improve the efficiency by introducing a new, final layer of module indirection, wrapping each individual IPSet reference into its own module. In this setup, we'll have the `shared-ipsets` module and then a `shared-ipset` module (singular) underneath it.
+We can optimize this by introducing a new, final layer of module indirection, wrapping each individual IPSet reference into its own module. In this setup, we'll have the `shared-ipsets` module and then a `shared-ipset` module (singular) underneath it.
 
-First, we can define an individual `shared-ipset` module, which takes a single string variable `name` and returns an `ipsets` object, just like the one from above, but only containing the entries for that individual named IPSet.
+First, we'll define the individual `shared-ipset` module, which takes a single string variable `name` and returns an `ipsets` object, just like the one from above, but only containing the entries for that individual named IPSet.
 
 ```tf
 # variables.tf
