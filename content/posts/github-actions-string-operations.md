@@ -82,7 +82,7 @@ For example, a common construct I write in workflows:
 
 ## JSON-to-JSON property selection
 
-Again using a splat, we can actually "select" a property out of a JSON blob without using any string functions. For example, suppose we have a job called `get-projects` that produces an output `projects` that looks like this:
+Again using a splat, we can actually "select" a property out of a JSON blob using just the JSON string functions. For example, suppose we have a job called `get-projects` that produces an output `projects` that looks like this:
 
 ```json
 [
