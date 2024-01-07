@@ -159,6 +159,23 @@ resource "aws_api_gateway_deployment" "this" {
 }
 ```
 
+Note that while initially attempting to deploy this change, I ran into a lot of Terraform Cycle Errors (during the plan stage). It seems like getting Terraform to both update resources and deploy them in the same action can be tricky -- there's some [history in this issue ticket](https://github.com/hashicorp/terraform-provider-aws/issues/11344).
+
+To get around this I included this new section in the lifecycle block:
+
+```hcl
+  lifecycle {
+    create_before_destroy = true
+
+    # Uncomment below to temporarily block deploys (to fix terraform cycles)
+    # ignore_changes = [
+    #   triggers
+    # ]
+  }
+```
+
+If I run into a Cycle error, I uncomment those lines, merge and apply, and then delete the lines again in a follow-up PR.
+
 ## Lambda Event Changes
 
 Be aware that the _event format_ is rather different between API Gateway v1 and API Gateway v2, so the actual code of your Lambda function (in our case TypeScript) will likely need to change.
