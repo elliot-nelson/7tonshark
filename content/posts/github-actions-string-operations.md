@@ -5,7 +5,7 @@ tags: [cicd, github]
 draft: true
 ---
 
-Expressions in GitHub Actions pipelines have some gaps that can make simple things rather frustrating. I've been bitten more than once while attempting to _concatenate a string_, or _join an array of strings_. Here's some string operations tips to add to your toolbox.
+Expressions in GitHub Actions pipelines have some gaps that can make simple operations rather frustrating. I've been bitten more than once while attempting to _concatenate a string_, or _join an array of strings_. Here's some string operations tips to add to your Actions toolbox.
 
 ## Concatenating several strings
 
@@ -97,7 +97,7 @@ Again using a splat, we can actually "select" a property out of a JSON blob usin
 ]
 ```
 
-I can "select out" an array of `infra_folder` entries and that JSON array to another job:
+I can "select out" an array of `infra_folder` entries and send that JSON array to another job:
 
 {% raw %}
 ```yaml

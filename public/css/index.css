@@ -421,3 +421,28 @@ footer:after {
     transition: 1s ease;
     cursor: not-allowed;
 }
+
+.postlist-item span {
+	color: var(--color-gray-90);
+}
+
+ul.postlist-tags {
+	display: inline;
+	bullet-style: none;
+	margin: 0;
+	padding: 0;
+}
+ul.postlist-tags li {
+	display: inline;
+	bullet-style: none;
+	margin: 0;
+	padding: 0;
+}
+ul.postlist-tags li a[href],
+ul.postlist-tags li a[href]:visited {
+	color: var(--color-gray-90);
+}
+ul.postlist-tags li a[href]:hover,
+ul.postlist-tags li a[href]:active {
+	color: var(--text-color-link-active);
+}
