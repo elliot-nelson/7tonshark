@@ -1,6 +1,7 @@
 ---
 title: Yet Another Redesign
 date: 2023-12-16
+tags: [random]
 ---
 I'm taking a couple weeks off for Christmas, so what better time to finally get around to a long-awaited overhaul of my personal blog?
 
