@@ -1,8 +1,7 @@
 ---
 title: String Operations in GitHub Actions
-date: 2024-01-09
+date: 2024-01-10
 tags: [cicd, github]
-draft: true
 ---
 
 Expressions in GitHub Actions pipelines have some gaps that can make simple operations rather frustrating. I've been bitten more than once while attempting to _concatenate a string_, or _join an array of strings_. Here's some string operations tips to add to your Actions toolbox.
