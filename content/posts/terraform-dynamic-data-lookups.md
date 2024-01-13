@@ -1,6 +1,6 @@
 ---
 title: Dynamic Data Lookups in Terraform
-date: 2024-04-20
+date: 2024-01-16
 tags: [terraform]
 draft: true
 ---
@@ -23,24 +23,24 @@ Let's explore how we could use this config file to dynamically lookup the existi
 
 My first attempt was to add new `data` lookups directly to my website Terraform module. I've got IPv4 and IPv6 addresses in each category, so we could load them all up like so:
 
-```tf
+```hcl
 data "aws_wafv2_ip_set" "office-ipv4" {
-  name  = "moonbeam-office-ipv4"
+  name  = "office-ipv4"
   scope = "CLOUDFRONT"
 }
 
 data "aws_wafv2_ip_set" "office-ipv6" {
-  name  = "moonbeam-office-ipv6"
+  name  = "office-ipv6"
   scope = "CLOUDFRONT"
 }
 
 data "aws_wafv2_ip_set" "vpn-ipv4" {
-  name  = "moonbeam-vpn-ipv4"
+  name  = "vpn-ipv4"
   scope = "CLOUDFRONT"
 }
 
 data "aws_wafv2_ip_set" "vpn-ipv6" {
-  name  = "moonbeam-vpn-ipv6"
+  name  = "vpn-ipv6"
   scope = "CLOUDFRONT"
 }
 
@@ -49,7 +49,7 @@ data "aws_wafv2_ip_set" "vpn-ipv6" {
 
 Then, in theory, we could try to use these data resources by creating dynamic `rule` entries on an `aws_wafv2_web_acl` resource:
 
-```tf
+```hcl
   dynamic "rule" {
     for_each = var.allowedIPSets
     content {
@@ -82,31 +82,31 @@ Then, in theory, we could try to use these data resources by creating dynamic `r
       statement {
         ip_set_reference_statement {
           # Next line is wrong...
-          arn = data."moonbeam-${rule.value}-ipv6".arn
+          arn = data."${rule.value}-ipv6".arn
         }
       }
     }
   }
 ```
 
-However, this doesn't work: Terraform doesn't allow "dynamic" lookups of data resources this way, because the list of dependent resources needs to be determined before variable values are determined.
+In practice, this doesn't work: Terraform doesn't allow "dynamic" lookups of data resources this way, because the list of dependent resources needs to be determined before variable values are determined.
 
-To avoid this error, we can add a level of indirection by wrapping our IPSets in a separate Terraform module.
+To avoid this error, we must add a level of indirection by wrapping our IPSets in a separate Terraform module.
 
 ## Attempt 2: Use a separate module
 
 Let's create a new module, `shared-ipsets`, and move our Terraform definition over there:
 
-```tf
+```hcl
 # data.tf
 
-data "aws_wafv2_ip_set" "office-ipv4" {
-  name  = "moonbeam-office-ipv4"
+data "aws_wafv2_ip_set" "shared-office-ipv4" {
+  name  = "office-ipv4"
   scope = "CLOUDFRONT"
 }
 
-data "aws_wafv2_ip_set" "office-ipv6" {
-  name  = "moonbeam-office-ipv6"
+data "aws_wafv2_ip_set" "shared-office-ipv6" {
+  name  = "office-ipv6"
   scope = "CLOUDFRONT"
 } # and etc...
 
@@ -134,7 +134,7 @@ output "ipsets" {
 
 In this Terraform module, we list out all of the possible IPSets we might use, and then we can access them in our WAF definition. Instead of attempting to access a dynamic data object, we'll refer to our `ipsets` output:
 
-```tf
+```hcl
 # Add the ipsets module
 
 module "shared-ipsets" {
@@ -159,7 +159,7 @@ module "shared-ipsets" {
 
 ```
 
-Success -- each of our Terraform website projects loads up our data resources and then builds IPSet reference rules for the ones used by that individual website.
+Success! Each of our Terraform website projects loads up our data resources and then builds IPSet reference rules for the ones used by that individual website.
 
 ## Attempt 3: Add a second module layer
 
@@ -169,7 +169,7 @@ We can optimize this by introducing a new, final layer of module indirection, wr
 
 First, we'll define the individual `shared-ipset` module, which takes a single string variable `name` and returns an `ipsets` object, just like the one from above, but only containing the entries for that individual named IPSet.
 
-```tf
+```hcl
 # variables.tf
 
 variable "name" {
@@ -206,7 +206,7 @@ output "ipsets" {
 
 Now that we have this new building block, let's adjust our `shared-ipsets` module to use this module, eliminating the hard-coded list of possible IPSets:
 
-```tf
+```hcl
 # variables.tf
 
 variable "names" {
@@ -230,11 +230,17 @@ output "ipsets" {
 
 Our `shared-ipsets` module now takes a list of the names to load, merging the results together and returning a single map, just like the old version did. Since this new version has the exact same outputs that the old one did, we don't have to adjust anything in our website module except the module definition:
 
-```tf
+```hcl
 module "shared-ipsets" {
   source = "../shared-ipsets"
   names  = var.allowedIPSets
 }
 ```
 
-A new terraform plan run confirms that we have the same plan output, _but_, we only have data load lines in the plan for the IPSets that the website actually lists in its configuration file. Nice!
+A new terraform plan run confirms that we have the same plan output, _but_, we only have data load lines in the planning log for the IPSets that the website actually lists in its configuration file. Nice!
+
+## Cleaning up
+
+In hindsight, if I were to rebuild this today, I might start with the singular `shared-ipset` module, and modify its output to just return the object with `{ ipv4, ipv6 }` in it, rather than the wrapping map. Then I wouldn't need a `shared-ipsets` module at all; each website would copy-paste a "module for-each" block for the `shared-ipset` module, referencing the desired IPSets directly.
+
+Something to consider for a future version.
