@@ -2,7 +2,6 @@
 title: Dynamic Data Lookups in Terraform
 date: 2024-01-16
 tags: [terraform]
-draft: true
 ---
 
 In a recent project, I had a series of reusable AWS WAF IPSets defined in one Terraform project. Then, in many separate Terraform projects, I wanted to use various combinations of these IPSets when creating WAFs for different websites.
