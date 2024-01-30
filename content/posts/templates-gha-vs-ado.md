@@ -1,8 +1,7 @@
 ---
 title: Templates in ADO vs GHA
-date: 2024-01-23
+date: 2024-01-30
 tags: [cicd, github, azure]
-draft: true
 ---
 
 It's been over a year now since I switched from Azure DevOps to GitHub Actions for our monorepo CI/CD pipelines. For the most part, the two platforms have equivalent features -- not _the same_, but close enough that you can implement a feature you want in either. I think the thing that disappoints me most about GitHub Actions is the lack of real Azure-style "templates".
