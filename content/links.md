@@ -1,6 +1,7 @@
 ## Links around the web
 
 * [Developer Productivity Engineering Handbook](https://storage.pardot.com/68052/1692821408aLLjn0mS/DPE_Handbook_2022__7_.pdf) (from the folks at Gradle Enterprise / Develocity)
+* [LinkedIn DPH Framework](https://linkedin.github.io/dph-framework/)
 * [Gwern.net](https://gwern.net/) by Gwern Branwen
 * [A Criticism of Scrum](https://www.aaron-gray.com/a-criticism-of-scrum/) by Aaron Gray
 * [Partial and shallow clones in git](https://github.blog/2020-12-21-get-up-to-speed-with-partial-clone-and-shallow-clone/) by [Derrick Stolee](https://twitter.com/stolee)
