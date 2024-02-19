@@ -159,6 +159,7 @@ code {
 	font-family: var(--font-family-monospace);
 	background-color: #c9c9c9;
 	background-color: #e9e4e0;
+	background-color: rgba(40, 40, 35, 1);
 	padding: 2px 3px;
 	color: #a04030;
 	color: #c06e4e;

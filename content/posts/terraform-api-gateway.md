@@ -1,8 +1,7 @@
 ---
 title: Moving from API Gateway v2 to API Gateway v1
-date: 2024-04-20
+date: 2024-02-19
 tags: [terraform]
-draft: true
 ---
 
 I recently had to handle conversion of an existing website from AWS API Gateway v2 to AWS API Gateway v1. I've documented some of the tricky bits below for future reference.
@@ -178,12 +177,16 @@ If I run into a Cycle error, I uncomment those lines, merge and apply, and then 
 
 ## Lambda Event Changes
 
-Be aware that the _event format_ is rather different between API Gateway v1 and API Gateway v2, so the actual code of your Lambda function (in our case TypeScript) will likely need to change.
+Be aware that the _event format_ is somewhat different between API Gateway v1 and API Gateway v2, so the actual code of your Lambda function (in our case TypeScript) will likely need to change.
 
 Luckily most of these changes were straightforward in my case:
 
- - Import type `APIGatewayProxyEvent` instead of `APIGatewayProxyEventV2`
- - `event.requestContext.http.sourceIp` -> `event.requestContext.identity.sourceIp`
- - `event.rawPath` -> `event.path`
- - `event.requestContext.http.method` -> `event.requestContext.httpMethod`
- - and so on
+- Import type `APIGatewayProxyEvent` instead of `APIGatewayProxyEventV2`
+- Change references from `event.requestContext.http.sourceIp` to `event.requestContext.identity.sourceIp`
+- Change references from `event.rawPath` to `event.path`
+- Change references from`event.requestContext.http.method` to `event.requestContext.httpMethod`
+- and so on
+
+## Conclusion
+
+Although API Gateway v2 is definitely easier to setup, API Gateway v1 is just as capable of proxying into a web server, and has some features that v2 doesn't offer still (like WAF integration). Hopefully this short punchlist helps if you're ever in a similar situation.
