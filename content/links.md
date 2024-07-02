@@ -1,5 +1,6 @@
 ## Links around the web
 
+* [I Will Fucking Piledrive You If You Mention AI Again](https://ludic.mataroa.blog/blog/i-will-fucking-piledrive-you-if-you-mention-ai-again/)
 * [Developer Productivity Engineering Handbook](https://storage.pardot.com/68052/1692821408aLLjn0mS/DPE_Handbook_2022__7_.pdf) (from the folks at Gradle Enterprise / Develocity)
 * [LinkedIn DPH Framework](https://linkedin.github.io/dph-framework/)
 * [Gwern.net](https://gwern.net/) by Gwern Branwen
