@@ -1,7 +1,7 @@
 ---
 title: Why is Nioh 2 so good?
 date: 2024-04-31
-tags: darksouls, videogames
+tags: [darksouls, videogames]
 ---
 
 There's a [Reddit post](https://www.reddit.com/r/Nioh/comments/15fsnlb/comment/jugis87/?utm_source=reddit&utm_medium=web2x&context=3) that perfectly encapsulates the genius of Nioh:
