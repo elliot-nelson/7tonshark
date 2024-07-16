@@ -447,3 +447,9 @@ ul.postlist-tags li a[href]:hover,
 ul.postlist-tags li a[href]:active {
 	color: var(--text-color-link-active);
 }
+
+blockquote {
+	border-left: solid 3px #909090;
+	padding-left: 16px;
+	margin-left: 32px;
+}
