@@ -5,6 +5,7 @@
 * [LinkedIn DPH Framework](https://linkedin.github.io/dph-framework/)
 * [Gwern.net](https://gwern.net/) by Gwern Branwen
 * [A Criticism of Scrum](https://www.aaron-gray.com/a-criticism-of-scrum/) by Aaron Gray
+* [CSS Utility Classes and "Separation of Concerns"](https://adamwathan.me/css-utility-classes-and-separation-of-concerns/) by Adam Wathan
 * [Partial and shallow clones in git](https://github.blog/2020-12-21-get-up-to-speed-with-partial-clone-and-shallow-clone/) by [Derrick Stolee](https://twitter.com/stolee)
 * [Dungeonomics](https://www.projectmultiplexer.com/category/dungeonomics/) by [Emily Dresner](https://twitter.com/multiplexer)
 * [V8 function optimization](https://erdem.pl/2019/08/v-8-function-optimization) by [Kemal Erdem](https://twitter.com/burnpiro)
