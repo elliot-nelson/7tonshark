@@ -1,7 +1,7 @@
 ---
 title: Reviewing PRs in a Monorepo
 tags: [dev, monorepo]
-date: 2024-08-17
+date: 2024-08-07
 ---
 
 There are many guides online for being a "good pull request reviewer", and a lot of the tips are broadly applicable to lots of professional situations: be courteous, be empathetic, be specific and constructive with feedback, and so on.
