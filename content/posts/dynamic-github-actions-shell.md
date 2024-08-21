@@ -4,7 +4,7 @@ date: 2024-08-19
 tags: [cicd, github]
 ---
 
-Ran into an issue recently where I was trying to do something which I thought was relatively simple: I had some steps in a reusable workflow, and I needed to run them in _PowerShell_ or _PowerShell Core_ depending on which runner I was running on (for legacy reasons, long story).
+Ran into an issue recently where I had to run a script in GitHub Actions in one of _PowerShell_ or _PowerShell Core_, depending on the runner I was on (for legacy reasons, long story).
 
 My first attempt, using a [fake ternary operator](/posts/github-actions-ternary-operator) expression:
 
