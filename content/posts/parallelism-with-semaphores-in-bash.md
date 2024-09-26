@@ -2,6 +2,8 @@
 title: Parallelism with Semaphores in Bash
 date: 2024-09-26
 tags: [dev, bash]
+description: Run threads in parallel in Bash using a mkfifo semaphore.
+cardImage: /img/parallelism-with-semaphores-in-bash.png
 ---
 
 I was reviewing the build scripts for an old project and unearthed one of my favorite bash scripts, written back when I was learning new bash tricks every day. Nowadays I would write a lot of this kind of thing in TypeScript or some other more structured language, but there's still a place in my heart for scripting right in the terminal... so: parallelism in bash!
