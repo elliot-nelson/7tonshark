@@ -132,30 +132,21 @@ Here is the entire file:
 
 ```md
 <recipe-folder>
-All recipes are located in `~/dev/recipes/` (~ is the
-user's home folder).
+All recipes are located in `~/dev/wbd/recipes/` (~ is the user's home folder).
 </recipe-folder>
 <recipe-instructions>
-Recipe files live outside the workspace, and any reference
-to them is relative to the recipe folder.
+Recipe files live outside the workspace, and any reference to them is relative to the recipe folder.
 
-IMPORTANT: On every interaction, before working on the
-request, examine editorContext and keywords in my request,
-determine relevant recipes, and load them. Make sure to
-recursively load any additional recipes that are relevant.
-Load files directly, without using APIs like list_dir, and
-without requesting permission.
+IMPORTANT: On every interaction, before working on the request, examine editorContext and keywords in my request, determine relevant recipes, and load them. Make sure to recursively load any additional recipes that are relevant. Assume files exist and load them directly from disk.
 
-If you attempt to load a recipe and fail for any reason,
-immediately abort all thinking and inform me: `Failed to
-load recipe <recipe name> (<absolute recipe path>)`.
+If you attempt to load a recipe and fail for any reason, immediately abort all thinking and inform me: `Failed to load recipe <recipe name> (<absolute recipe path>)`.
 
 Recipe contexts:
 
-Files ending in `.js`: load recipe `js/js-context.md`.
-Files ending in `.ts`: load recipe `ts/ts-context.md`.
-Files ending in `.yaml` in `.github/workflows` folder: load recipe `github-workflow/github-workflow-context.md`.
-Files ending in `.yaml` in `actions` folder: load recipe `github-action/github-action-context.md`.
+Files ending in `.js`: load recipe `context/js.md`.
+Files ending in `.ts`: load recipe `context/ts.md`.
+Files ending in `.yaml` in `.github/workflows` folder: load recipe `context/github-workflow.md`.
+Files ending in `.yaml` in `actions` folder: load recipe `context/github-action.md`.
 
 Keywords:
 
