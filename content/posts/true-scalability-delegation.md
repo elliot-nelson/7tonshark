@@ -1,5 +1,5 @@
 ---
-title: True Scalability & Responsibility
+title: True Scalability & Responsibility with AI
 description: True scalability requires delegation of responsibility, not just tasks.
 date: 2025-07-04
 tags: [dev, ai]
