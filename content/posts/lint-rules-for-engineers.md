@@ -1,7 +1,7 @@
 ---
 title: Lint rules should help engineers, not just programmers
 date: 2024-07-16
-tags: [dev]
+tags: [dev, musings]
 ---
 
 I'm a huge fan of linters and static code analysis in general, but there's a specific class of rules that bug me to no end.
@@ -22,12 +22,12 @@ Whether a variable is assigned once, or twice, is often simple happenstance. If 
 
 ```js
 function getAverageWeight() {
-    const multiplier = this.getWeightFactor();
-    let weight = this.baseWeight;
+	const multiplier = this.getWeightFactor();
+	let weight = this.baseWeight;
 
-    // TODO: Apply weight variances
+	// TODO: Apply weight variances
 
-    return weight;
+	return weight;
 }
 ```
 
@@ -49,9 +49,9 @@ The idea that a contributor might take their explicit author intent, and throw i
 
 Here's a very annoying example from the Prometheus linter, pint:
 
->promql/regexp:
+> promql/regexp:
 >
->This check will warn if metric selector uses a regexp match but the regexp query doesn’t have any patterns and so a simple string equality match can be used. Since regexp checks are more expensive using a simple equality check if preferable.
+> This check will warn if metric selector uses a regexp match but the regexp query doesn’t have any patterns and so a simple string equality match can be used. Since regexp checks are more expensive using a simple equality check if preferable.
 
 Seems reasonable, right? Why use a regular expression check if a simple equality check would suffice?
 

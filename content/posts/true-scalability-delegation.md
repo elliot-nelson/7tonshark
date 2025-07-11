@@ -2,7 +2,7 @@
 title: True Scalability & Responsibility with AI
 description: True scalability requires delegation of responsibility, not just tasks.
 date: 2025-07-04
-tags: [dev, ai]
+tags: [dev, ai, musings]
 ---
 
 I was reading a blog post recently about "scaling up your productivity with AI" (I'm sure you've seen many); for whatever reason, this time the phrase really struck me. I'm increasingly convinced that AI, as we currently use it, does not truly "scale" developers. This isn't a tech problem: no matter how good the AI model becomes, it's impossible for 1 human + 1 AI to be equivalent to 2 humans.
