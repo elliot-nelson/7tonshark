@@ -19,6 +19,7 @@ module.exports = function (eleventyConfig) {
 		"./node_modules/prismjs/themes/prism-okaidia.css": "/css/prism-okaidia.css",
 		"./content/posts/simple-interactive-music-soundbox/*.js":
 			"/posts/simple-interactive-music-soundbox/",
+		"./content/posts/pixel-art-canvas-resize/": "/pixel-art-canvas-resize/",
 	});
 
 	// Run Eleventy when these files change:
