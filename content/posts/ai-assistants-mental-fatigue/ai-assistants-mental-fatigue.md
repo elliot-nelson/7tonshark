@@ -5,6 +5,12 @@ tags: [dev, ai, musings]
 description: Why 5x productivity tools aren't giving us 5x output.
 ---
 
+{% image "./banner.png", "Example Game Grid" %}
+
+
+
+![alt text](/img/ai2.png)
+
 ## A productivity paradox
 
 I've been using AI assistants like GitHub Copilot heavily for the past few months, and as I get comfortable, the results have been incredible -- on a task-by-task basis. In some cases, especially quick bug fixes and prototyping tasks, I've finished tasks 5x faster (or more!) than I would have doing my own coding and research.
