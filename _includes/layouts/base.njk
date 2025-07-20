@@ -4,13 +4,12 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>{{ title or metadata.title }}</title>
-		<meta name="description" content="{{ description or metadata.description }}">
-		<meta name="og:description" content="{{ description or metadata.description }}">
-
+		<meta name="author" content="{{ metadata.author.name }}">
+		<meta name="title" property="og:title" content="{{ title or cardTitle}}" />
+		<meta name="description" property="og:description" content="{{ description or metadata.description }}">
 		<meta name="twitter:card" content="{{cardType or 'summary'}}" />
 		<meta name="twitter:creator" content="{{metadata.twitterHandle}}" />
 		<meta property="og:url" content="{{metadata.url}}{{page.url}}" />
-		<meta property="og:title" content="{{ title or cardTitle}}" />
 		<meta name="twitter:image" content="{{metadata.url}}{{cardImage or '/android-chrome-384x384.png'}}" />
 		<meta name="og:image" content="{{metadata.url}}{{cardImage or '/android-chrome-384x384.png'}}" />
 

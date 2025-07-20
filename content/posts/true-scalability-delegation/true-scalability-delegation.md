@@ -1,6 +1,6 @@
 ---
 title: True Scalability & Responsibility with AI
-description: True scalability requires delegation of responsibility, not just tasks.
+description: To truly scale, it's not enough to just delegate tasks, you also need to delegate responsibility for those tasks.
 date: 2025-07-04
 tags: [dev, ai, musings]
 ---
