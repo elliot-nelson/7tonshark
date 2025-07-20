@@ -194,8 +194,8 @@ function fixFiles(markdownPath) {
   }
 
   console.log('Creating new folder for post...');
-  fs.mkdirSync(path.dirname(markdownPath) + '/' + baseName);
-  fs.moveSync(markdownPath, path.dirname(markdownPath) + '/' + baseName + '/' + baseName + '.md', { overwrite: true });
+  fs.mkdirSync(path.dirname(markdownPath) + '/' + baseName, { recursive: true });
+  fs.renameSync(markdownPath, path.dirname(markdownPath) + '/' + baseName + '/' + baseName + '.md', { overwrite: true });
 
   return path.dirname(markdownPath) + '/' + baseName + '/' + baseName + '.md';
 }

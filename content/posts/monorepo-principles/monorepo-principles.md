@@ -7,6 +7,8 @@ date: 2022-07-29
 tags: [monorepo, musings]
 ---
 
+{% image "./banner.png", "Three facets of a successful monorepo" %}
+
 I've been thinking about monorepos a lot recently, from a general, high-level perspective. Certain goals and concepts come up frequently no matter what type of monorepo you're managing, and I thought I'd jot some of them down.
 
 In my opinion, there are _three key facets_ to a successful monorepo: collocation, coherence, and standardization. Once combined, these facets provide a support structure that allows your developers to adopt a monorepo _mindset_. This mindset is a way of working that a monorepo both encourages and rewards: making small, focused, pull requests, paying costs for changes up front, having each change pay for itself, and so on.

@@ -5,11 +5,7 @@ tags: [dev, ai, musings]
 description: Why 5x productivity tools aren't giving us 5x output.
 ---
 
-{% image "./banner.png", "Example Game Grid" %}
-
-
-
-![alt text](/img/ai2.png)
+{% image "./banner.png", "AI Assistants & Mental Fatigue" %}
 
 ## A productivity paradox
 

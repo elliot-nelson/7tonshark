@@ -6,6 +6,8 @@ description: Run threads in parallel in Bash using a mkfifo semaphore.
 cardImage: /img/parallelism-with-semaphores-in-bash.png
 ---
 
+{% image "./banner.png", "Parallelism with Semaphores in Bash" %}
+
 I was reviewing the build scripts for an old project and unearthed one of my favorite bash scripts, written back when I was learning new bash tricks every day. Nowadays I would write a lot of this kind of thing in TypeScript or some other more structured language, but there's still a place in my heart for scripting right in the terminal... so: parallelism in bash!
 
 The goal is to run a series of many "testing scripts", all written in bash, and to do so in parallel -- but a _controlled_ parallelism, with some configurable number (let's say 5) running at a time. One way to do this is to build a semaphore: a lock which can be locked N times, but when you try to lock it N+1 times, you have to wait until someone holding one of the N locks releases their lock.

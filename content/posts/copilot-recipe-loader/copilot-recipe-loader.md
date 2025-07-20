@@ -5,6 +5,8 @@ tags: [dev, ai]
 description: Loading cascading context-sensitive recipe files while coding with Copilot.
 ---
 
+{% image "./banner.png", "Copilot: A cascading recipe loader" %}
+
 ## The goal: customizing your development language
 
 Lately, I've been really interested in being able to customize the _language I use to interact with Copilot_ so that I can give it commands, and have those commands interpreted the way I want them, potentially differently based on context (e.g. a GitHub Actions YAML file versus a JavaScript file).
