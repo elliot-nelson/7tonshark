@@ -34,7 +34,7 @@ Borrowing his terminology, what I've been realizing is that AI tools can shift a
 
 But what this leaves for us is only _System 2_ thinking: carefully reading everything the AI produces, evaluating different suggestions, context switching between writing prompts and reviewing code, deciding if the work so far is both correct and complete, and so on. With no breaks for the System 1 work, our brains are in high gear for extended periods of time, burning through mental energy at an accelerated rate.
 
-In his book, Kahneman proposed that we have a particular "capacity" for quality Sytem 2 thinking, and that capacity is affected by factors like:
+In his book, Kahneman proposed that we have a particular "capacity" for quality System 2 thinking, and that capacity is affected by factors like:
 
 - Blood glucose levels
 - Sleep quality and quantity
