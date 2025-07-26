@@ -1,0 +1,13 @@
+           ▒      ░                     \            ▒      
+  ╔═════════════════════════════════════════════════╗  ▓    
+  ║ Is prompt engineering the new artisanal coding? ║       
+  ╚══════╤══════════════════════════════════════════╝      █
+░◆▒      │             ○   ▒ ▓          ()  \    █          
+○      ■▓│                     ■       (  )  \   ◆█+        
+         │   ┌───────────────────────────────────────────┐  
+         └──>│ LLMs aren't just a new layer of           │  
+             │ abstraction: they are a brand new playing │* 
+   .         │ field for "hand-crafted" code.            │  
+        ▓    └───────────────────────────────────────────┘  
+                                    *◆             ▒      ○ 
+ ▒  ■               ░ .     +       █              ░        
