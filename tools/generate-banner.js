@@ -243,7 +243,7 @@ function main() {
 	const md = fs.readFileSync(file, "utf8");
 	const meta = parseFrontmatter(md);
 	const title = meta.title || "Untitled";
-	const description = meta.description || "";
+	const description = meta.banner_description || meta.description || "";
 
 	// Prepare canvas
 	const W = 60,

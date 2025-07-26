@@ -1,7 +1,11 @@
 #!/usr/bin/env node
 
 // tools/generate-banner.js
-// Usage: node tools/generate-banner.js <path-to-md-file>
+// Usage: node tools/generate-banner-imagejs <path-to-md-file>
+//
+// Calls a customized local version of ray-so to generate a PNG
+// image from it. For more information,
+// see: https://github.com/elliot-nelson/ray-so/tree/zzt.
 
 const fs = require('fs');
 const path = require('path');
