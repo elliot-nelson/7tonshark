@@ -10,7 +10,8 @@
 		"debugstart": "DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
 		"benchmark": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
 		"banner-text": "node ./tools/generate-banner.js",
-		"banner-image": "node ./tools/generate-banner-image.js"
+		"banner-image": "node ./tools/generate-banner-image.js",
+		"new-post": "node ./tools/new-post.js"
 	},
 	"repository": {
 		"type": "git",
