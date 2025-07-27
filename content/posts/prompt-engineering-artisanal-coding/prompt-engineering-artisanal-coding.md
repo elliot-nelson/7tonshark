@@ -1,6 +1,6 @@
 ---
 title: Is prompt engineering the new artisanal coding?
-date: 2025-07-16
+date: 2025-07-27
 tags: [dev, ai, musings]
 description: "LLMs aren't just a new layer of abstraction. The best way to describe what you intend to build, and how to build it, will continue evolving for years to come -- which means prompt engineering has the potential to be the most \"hand-crafted\" discipline of all."
 banner_description: "LLMs aren't just a new layer of abstraction: they are a brand new playing field for \"hand-crafted\" code."
