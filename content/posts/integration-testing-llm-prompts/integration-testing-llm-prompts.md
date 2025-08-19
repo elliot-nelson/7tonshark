@@ -1,6 +1,6 @@
 ---
 title: "Integration Testing LLM Prompts"
-date: 2025-07-29
+date: 2025-08-19
 tags: [dev, ai]
 description: Using Jest snapshots to produce representative response samples for internal prompts.
 banner_description: Jest snapshots for representative response samples on internal prompts.
