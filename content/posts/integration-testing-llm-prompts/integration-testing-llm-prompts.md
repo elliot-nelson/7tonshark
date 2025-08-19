@@ -6,7 +6,9 @@ description: Using Jest snapshots to produce representative response samples for
 banner_description: Jest snapshots for representative response samples on internal prompts.
 ---
 
-One of the things I've been exploring is how to test the impact of changes to behind-the-scenes prompts on end-user experience. If you're baking LLMs into your product, it's not enough to go through a round of initial testing: new model versions will be released, you'll tweak your internal prompts for various reasons, and you need to have some kind of gut check on what the change in end-user experience might be.
+{% image "./banner.png", "Integration Testing LLM Prompts" %}
+
+Something I've been exploring is how to test the impact of changes to behind-the-scenes prompts on end-user experience. If you're baking LLMs into your product, it's not enough to go through a round of initial testing: new model versions will be released, you'll tweak your internal prompts for various reasons, and you need to have some kind of gut check on what the change in end-user experience might be.
 
 ## Snapshot testing
 
