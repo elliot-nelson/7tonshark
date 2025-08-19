@@ -1,7 +1,7 @@
 ---
 title: Three facets of a successful monorepo
 subtitle: Exploring collocation, coherence, and standardization.
-description: There are three key facets to a successful monorepo: collocation, coherence, and standardization. Putting all your code "in one repo" is just the beginning of the journey...
+description: 'There are three key facets to a successful monorepo: collocation, coherence, and standardization. Putting all your code "in one repo" is just the beginning of the journey...'
 tweets: ["1539342191415508993"]
 date: 2022-07-29
 tags: [monorepo, musings]
