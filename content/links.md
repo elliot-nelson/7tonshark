@@ -1,5 +1,6 @@
 ## Links around the web
 
+* [Where's the Shovelware? Why AI Coding Claims Don't Add Up](https://mikelovesrobots.substack.com/p/wheres-the-shovelware-why-ai-coding) by [Mike Judge](https://substack.com/@mikelovesrobots)
 * [The Configuration Complexity Clock](https://mikehadlow.blogspot.com/2012/05/configuration-complexity-clock.html) by [Mike Hadlow](https://twitter.com/mikehadlow)
 * [I Will Fucking Piledrive You If You Mention AI Again](https://ludic.mataroa.blog/blog/i-will-fucking-piledrive-you-if-you-mention-ai-again/)
 * [Developer Productivity Engineering Handbook](https://storage.pardot.com/68052/1692821408aLLjn0mS/DPE_Handbook_2022__7_.pdf) (from the folks at Gradle Enterprise / Develocity)
