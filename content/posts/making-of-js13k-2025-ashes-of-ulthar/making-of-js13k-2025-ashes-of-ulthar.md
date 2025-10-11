@@ -36,13 +36,13 @@ There's a lot more I wanted to cram in here, of course: more buildings, more det
 
 ## Music & sound effects
 
-I used [Sound Box](https://sb.bitsnbites.eu/) to compose the music again this year. Because I was going for a spooky, unsettling village feeling, I played around with instruments and chords off of E minor (adding 6ths, 7ths, 9ths, etc.) until it sounded good, then basically just looped it, with _very_ small adjustments (e.g. going up a 5th or a tritone) in the middle of the song -- by then I hoped the player was lost trying to keep track of their resources and read the Codex, and I wanted the music to stay in the background, just noticeable enough to add to the ambience.
+I used [Sound Box](https://sb.bitsnbites.eu/) to compose the music again this year. Because I was going for a spooky, unsettling village feeling, I played around with instruments and chords off of E minor (adding 6ths, 7ths, 9ths, etc.) until it sounded good. From there it's a loop with minor adjustments (e.g. going up a 5th or a tritone) in the middle of the song. By then I hoped the player was lost trying to keep track of their resources and read the Codex, and I wanted the music to stay in the background, just noticeable enough to add to the ambience.
 
 > While coming up with chords I found this video, [The Scariest + Creepiest Chords AND How to Use Them](https://www.youtube.com/watch?v=-dgicW1ioP0), very useful -- I know only a little about music theory so I found myself rewinding and playing sections often as I experimented in the tracker.
 
-One thing I really wanted to mess with this year was the time signature. To help emulate a different time signature, I changed the pattern length from the standard 32 rows in SoundBox to 28 rows, which I hoped would simulate going from 8/8 to 7/8. Then I structured my chords and drum tracks around this 7-note pattern, hoping for an effect where it always felt slightly "off", like it was going to resolve a full 8/8 bar but never did. I'm not sure if it is exactly 7/8 or not, but it was fun to play with and I'm very happy with the final result!
+One thing I really wanted to mess with this year was the time signature. To help emulate a different time signature, I changed the pattern length from the standard 32 rows in SoundBox to 28 rows, which I hoped would simulate going from 8/8 to 7/8 time signature. Then I structured my chords and drum tracks around this 7-note pattern, hoping for an effect where it always felt slightly "off", like it was going to resolve a full 8/8 bar but never did. I'm not sure if it is exactly 7/8 or not, but it was fun to play with and I'm very happy with the final result!
 
-In past years, I had managed to squeeze in _both_ the SoundBox player (for music) and the ZzFX player (for sound effects), but this year all those pixel art backgrouns were eating a ton of space, so I decided to cut the ZzFX player and use SoundBox to make sound effects as well. I came up with a handful of useful sounds by playing with the instrument settings and assigning a track each to a sound effect, which I then used to "play" each track when I needed a sound.
+In past years, I had managed to squeeze in _both_ the SoundBox player (for music) and the ZzFX player (for sound effects), but this year all those pixel art backgrounds were eating a ton of space, so I decided to cut the ZzFX player and use SoundBox to make sound effects as well. I came up with a handful of useful sounds by playing with the instrument settings and assigning a track each to a sound effect, which I then used to "play" each track when I needed a sound.
 
 This "SoundBox Sound Effects" trick worked reasonably well, and I'll probably try it again next year. It makes some sound effects (for example, a little victory trill, or drum beat, etc.) quite a bit easier to create; on the other hand, I'm not sure it's actually possible to get a ZzFX-style "jump" or "shoot" effect in SoundBox, so this technique may be less useful depending on the genre of game. I'll be experimenting with this more next year.
 
@@ -60,7 +60,7 @@ To animate the villager's journey, there's a simple heightmap of the entire scre
 
 (Technically there are three heightmaps, since the tallowers walk in terrain layer 2 and cantors walk in terrain layer 3 -- but it all uses the same basic system.)
 
-To avoid the "sameness" of a bunch of villagers all just moving back and forth to the exact same spot, there's some randomness built into each job, with a range of X locations you can end up at. Some jobs (like woodcutters and stonemasons) also do random "spinning around" at their target locations, to simulate work. This doesn't make sense for jobs like cantor, so the spinning is turned off for those jobs.
+To avoid the "sameness" of a bunch of villagers all just moving back and forth to the exact same spot, there's some randomness built into each job, with a range of X locations you can end up at. Some jobs (like woodcutters and stonemasons) also do random "spinning around" at their target locations, to simulate work. This doesn't make sense for jobs like cantor, so spinning is turned off for those jobs.
 
 {% image "./villager.gif", "Villager with the Woodcutter job" %}
 
@@ -75,11 +75,11 @@ The thing is, this type of doomed resource micro-management game isn't going to 
  * By game 5 you can stabilize every time and have probably tried to win using the ritual, only to run into the much higher sanity drain.
  * Eventually you've come up with a strategy, some combination of stacking up resources, villager sacrifices, or cantor villagers, and can easily win the game every time.
 
-For the people this game is "meant for", I think I landed exactly where I wanted to -- a challenge that _seems_ absurd the first time you encounter it, but later that day, can be beaten with ease. The thing that changes is not levels or equipment or some new resource, only your own knowledge about how the game works.
+For the people this game is "meant for", I think I landed exactly where I wanted to -- a challenge that _seems_ absurd the first time you encounter it, but later that day, it can be beaten with ease. The thing that changes is not levels or equipment or some new resource, only your own knowledge about how the game works.
 
 > By the way, if you're one of those people, consider checking out [Dungeon of the ENDLESS](https://store.steampowered.com/app/249050/Dungeon_of_the_ENDLESS). It is nothing like my game, but it contains the exact "from bewilderment to mastery" feeling of satisfaction that is typical in roguelikes, and that I tried to recreate with my entry this year.
 
-Sadly, my audience this year was probably restricted even further because I had to jettison my "help" screen for size -- a bit more explanation is often the difference between people bouncing off your game and sticking with it. I added the Help screen back for the Director's Cut edition, but I'm confident this cost me a few points in the gameplay department.
+Sadly, my audience this year was probably restricted even further because I had to jettison my "Help" screen due to size constraints -- a bit more explanation is often the difference between people bouncing off your game and sticking with it. I added the Help screen back for the Director's Cut edition, but I'm confident this cost me a few points in the gameplay department.
 
 ## Lessons learned
 
@@ -87,7 +87,7 @@ No game jam is complete without a list of the mistakes you made!
 
 By far my biggest mistake this year was _not testing my final output_ early enough. What I did not realize during my initial setup is that I had made a game-breaking mistake in my Gulp build that only applied during the final "zipped" build (the one that has all the maximum compression settings and etc.). My day-to-day testing is always done on my "normal" build, because it's much faster and has better stack traces, and it wasn't until the final _hours_ of the competition that I realized my actual zipped build didn't load.
 
-What's even worse is that the fix to this bug meant that missing assets were now included -- not only was my final ZIP broken the entire time, it was broken in a way that was masking almost 1KB size. So I had to find a way in just hours to cut 1KB out of the game, and I did so by replacing my sanity bar with a much more boring box and completely eliminating my Help screen.
+What's even worse is that the fix to this bug meant that missing assets were now included -- not only was my final ZIP broken the entire time, it was broken in a way that was masking almost 1KB of size. So I had to find a way in just hours to cut 1KB out of the game, and I did so by replacing my sanity bar with a much more boring box and completely eliminating my Help screen.
 
 Next year I'll make it a goal to have at least a weekly checkin where I thoroughly test my final zipped build, so that if something goes wrong I won't be sweating it in the final days of the comp.
 
