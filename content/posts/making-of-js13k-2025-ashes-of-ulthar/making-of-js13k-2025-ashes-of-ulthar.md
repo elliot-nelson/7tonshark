@@ -1,6 +1,6 @@
 ---
 title: js13k 2025 Postmortem
-date: 2025-09-27
+date: 2025-10-11
 tags: [gamedev, js13k]
 description: The making of "Ashes of Ulthar", my 2025 js13k gamejam entry.
 banner_description: The making of "Ashes of Ulthar", my 2025 js13k gamejam entry.
