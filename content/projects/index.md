@@ -16,7 +16,7 @@ Check out the [GitHub repo](https://github.com/elliot-nelson/ladderjs) or [try i
 
 ### Ashes of Ulthar (2025)
 
-* [Ashes of Ulthar](https://github.com/elliot-nelson/js13k-2025-ashes-of-ulthar) was my 2025 entry for #js13k. This gloomy race-against-the-clock pixel art resource simulator was a blast to build. (Blog post coming soon!)
+* [Ashes of Ulthar](https://github.com/elliot-nelson/js13k-2025-ashes-of-ulthar) was my 2025 entry for #js13k. This gloomy race-against-the-clock pixel art resource simulator was a blast to build. Also see my [post-jam blog post](/posts/making-of-js13k-2025-ashes-of-ulthar) about this game.
 
 ### Harold is Heavy (2023)
 
