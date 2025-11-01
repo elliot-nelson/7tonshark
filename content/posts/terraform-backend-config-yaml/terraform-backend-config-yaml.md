@@ -1,6 +1,6 @@
 ---
 title: Keeping Terraform Config in YAML
-date: 2025-11-03
+date: 2025-11-04
 tags: [terraform]
 description: "Store service-specific and terraform backend configuration in shared YAML configuration files, for a simple way to deploy small projects."
 banner_description: "Store service-specific and terraform backend configuration in shared YAML configuration files."
