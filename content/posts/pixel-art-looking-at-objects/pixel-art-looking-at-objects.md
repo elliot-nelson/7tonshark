@@ -1,6 +1,6 @@
 ---
 title: 'Pixel Art: Looking at Objects'
-date: 2026-06-16
+date: 2026-07-11
 tags: [gamedev]
 description: Pixel art doesn't work unless you know what a blob of pixels is supposed to represent.
 banner_description: Pixel art doesn't work unless you know what a blob of pixels is supposed to represent.
