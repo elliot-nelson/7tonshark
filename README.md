@@ -1,34 +1,47 @@
-# 7 ton shark
+# 7tonshark.com
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/19a00125-e401-4632-8147-250e3f26f0ca/deploy-status)](https://app.netlify.com/sites/7tonshark/deploys)
+The personal website of Elliot Nelson — [7tonshark.com](https://7tonshark.com).
+A minimal, dark-on-light blog built with [Astro](https://astro.build/).
 
-The personal website of Elliot Nelson: [https://7tonshark.com](https://7tonshark.com).
+## Stack
 
- - Source code on GitHub.
- - Hosted on Netlify.
- - Built using Eleventy.
- - Based on [eleventy-base-blog](https://github.com/11ty/eleventy-base-blog) with minimal adjustements.
+- **Astro 7** — static site generation, content collections, `astro:assets` image optimization.
+- **Markdown posts** — one folder per post under `src/content/posts/<slug>/`, with co-located images. See `src/content.config.ts` for the front matter schema.
+- **Shiki** (`night-owl`) — syntax highlighting for code blocks.
+- **Pagefind** — static search index built at deploy time.
+- **Geist Sans / Geist Mono** — typography.
+- Custom CSS (no framework) in `src/styles/global.css`.
 
-## Past Revisions
+## Commands
 
-Eleventy v2 rewrite, using [eleventy-base-blog](https://github.com/11ty/eleventy-base-blog) starter theme.
+All commands are run from the root of the project:
 
-Here's how it looked as of January 2024:
+| Command           | Action                                             |
+| :---------------- | :------------------------------------------------- |
+| `npm install`     | Install dependencies                               |
+| `npm run dev`     | Start the local dev server (drafts are visible)    |
+| `npm run build`   | Type-check (`astro check`) and build to `./dist/`  |
+| `npm run preview` | Preview the production build locally               |
 
-![Screenshot](./etc/history-2024-01.md)
+Use the Node version pinned in `.nvmrc` (`nvm use`).
 
-### v3
+## Writing a post
 
-Big Eleventy rewrite, using [EleventyOne](https://github.com/philhawksworth/eleventyone) starter theme.
+Create `src/content/posts/<slug>/index.md` with front matter:
 
-Here's how it looked as of November 2023:
+```yaml
+---
+title: My post
+date: 2026-01-01
+tags: [dev]
+description: One-line summary used in listings and the RSS feed.
+draft: true # optional — visible in `npm run dev`, excluded from production builds
+---
+```
 
-![Screenshot](./etc/history-2023-11.md)
+Drop any images alongside `index.md` and reference them with relative
+Markdown (`![alt](./image.png)`); Astro optimizes them automatically.
 
-### v2
+## Deployment
 
-Rebranded Jekyll version. Screenshot lost to time.
-
-### v1
-
-Original Jekyll version. Screenshot lost to time.
+Deployed on Netlify (see `netlify.toml`): `npm run build` → publish `dist/`.

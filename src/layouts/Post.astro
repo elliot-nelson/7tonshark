@@ -1,0 +1,60 @@
+---
+import Base from "./Base.astro";
+import { visibleTags } from "../lib/posts";
+
+interface Props {
+	title: string;
+	description?: string;
+	date: Date;
+	tags?: string[];
+	draft?: boolean;
+	prev?: { slug: string; title: string };
+	next?: { slug: string; title: string };
+}
+
+const { title, description, date, tags = [], draft, prev, next } = Astro.props;
+const displayTags = visibleTags(tags);
+
+const readableDate = date.toLocaleDateString("en-US", {
+	year: "numeric",
+	month: "long",
+	day: "numeric",
+	timeZone: "UTC",
+});
+const isoDate = date.toISOString().slice(0, 10);
+---
+
+<Base title={title} description={description}>
+	<article class="post-content" data-pagefind-body>
+		{draft && <p class="draft-badge">Draft — not published in production</p>}
+		<h1>{title}</h1>
+		<div class="post-meta">
+			<time datetime={isoDate}>{readableDate}</time>
+			{
+				displayTags.length > 0 && (
+					<ul class="post-tags">
+						{displayTags.map((tag) => (
+							<li>
+								<a href={`/tags/${tag}/`}>{tag}</a>
+							</li>
+						))}
+					</ul>
+				)
+			}
+		</div>
+		<slot />
+	</article>
+
+	{
+		(prev || next) && (
+			<ul class="prevnext">
+				<li>
+					{prev && <a href={`/posts/${prev.slug}/`}>← {prev.title}</a>}
+				</li>
+				<li>
+					{next && <a href={`/posts/${next.slug}/`}>{next.title} →</a>}
+				</li>
+			</ul>
+		)
+	}
+</Base>

@@ -1,0 +1,77 @@
+---
+import "../styles/global.css";
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { title, description } = Astro.props;
+const siteTitle = "7 ton shark";
+const siteDescription = "The personal website of Elliot Nelson.";
+const fullTitle = title ? `${title} — ${siteTitle}` : siteTitle;
+
+const nav = [
+	{ href: "/posts/", label: "Posts" },
+	{ href: "/projects/", label: "Projects" },
+	{ href: "/links/", label: "Links" },
+	{ href: "/about/", label: "About" },
+];
+const path = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>{fullTitle}</title>
+		<meta name="description" content={description ?? siteDescription} />
+		<meta property="og:title" content={title ?? siteTitle} />
+		<meta property="og:description" content={description ?? siteDescription} />
+		<meta name="twitter:card" content="summary" />
+		<link rel="sitemap" href="/sitemap-index.xml" />
+		<link
+			rel="alternate"
+			type="application/atom+xml"
+			title={siteTitle}
+			href="/feed/feed.xml"
+		/>
+		<script
+			defer
+			data-domain="7tonshark.com"
+			src="https://plausible.io/js/script.js"></script>
+	</head>
+	<body>
+		<a href="#main" class="skip-link">Skip to content</a>
+		<header class="site-header">
+			<div class="wrap">
+				<a href="/" class="site-title">{siteTitle}</a>
+				<nav class="site-nav">
+					{
+						nav.map((item) => (
+							<a
+								href={item.href}
+								aria-current={
+									path.startsWith(item.href) ? "page" : undefined
+								}
+							>
+								{item.label}
+							</a>
+						))
+					}
+				</nav>
+			</div>
+		</header>
+		<main id="main" class="wrap">
+			<slot />
+		</main>
+		<footer class="site-footer">
+			<div class="wrap">
+				© {new Date().getFullYear()} Elliot Nelson · <a
+					href="/feed/feed.xml">RSS</a
+				> · <a href="https://github.com/elliot-nelson">GitHub</a>
+			</div>
+		</footer>
+	</body>
+</html>

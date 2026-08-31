@@ -1,0 +1,29 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getSortedPosts, postSlug } from "../../lib/posts";
+
+const posts = await getSortedPosts();
+const fmt = (d: Date) =>
+	d.toLocaleDateString("en-US", {
+		year: "numeric",
+		month: "short",
+		day: "numeric",
+		timeZone: "UTC",
+	});
+---
+
+<Base title="Posts" description="Posts by Elliot Nelson.">
+	<h1>Posts</h1>
+	<ul class="postlist">
+		{
+			posts.map((post) => (
+				<li>
+					<a href={`/posts/${postSlug(post)}/`}>{post.data.title}</a>
+					<time datetime={post.data.date.toISOString().slice(0, 10)}>
+						{fmt(post.data.date)}
+					</time>
+				</li>
+			))
+		}
+	</ul>
+</Base>

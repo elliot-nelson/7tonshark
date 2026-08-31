@@ -1,0 +1,35 @@
+---
+import { render } from "astro:content";
+import Post from "../../layouts/Post.astro";
+import { getSortedPosts, postSlug, type Post as PostEntry } from "../../lib/posts";
+
+export async function getStaticPaths() {
+	const posts = await getSortedPosts();
+	const link = (p?: PostEntry) =>
+		p ? { slug: postSlug(p), title: p.data.title } : undefined;
+
+	return posts.map((post, i) => ({
+		params: { slug: postSlug(post) },
+		props: {
+			post,
+			prev: link(posts[i + 1]), // older
+			next: link(posts[i - 1]), // newer
+		},
+	}));
+}
+
+const { post, prev, next } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Post
+	title={post.data.title}
+	description={post.data.description}
+	date={post.data.date}
+	tags={post.data.tags}
+	draft={post.data.draft}
+	prev={prev}
+	next={next}
+>
+	<Content />
+</Post>

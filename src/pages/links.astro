@@ -1,0 +1,36 @@
+---
+import Base from "../layouts/Base.astro";
+import { links } from "../data/links";
+---
+
+<Base
+	title="Links"
+	description="A running list of articles, tools, and sites worth your time."
+>
+	<h1>Links around the web</h1>
+	<p>A running collection of articles, tools, and sites I've found worth sharing.</p>
+
+	<ul class="linklist">
+		{
+			links.map((link) => (
+				<li>
+					<a href={link.url} rel="noopener">
+						{link.title}
+					</a>
+					{link.by &&
+						(link.byUrl ? (
+							<span class="linklist-by">
+								{" "}
+								by{" "}
+								<a href={link.byUrl} rel="noopener">
+									{link.by}
+								</a>
+							</span>
+						) : (
+							<span class="linklist-by"> by {link.by}</span>
+						))}
+				</li>
+			))
+		}
+	</ul>
+</Base>

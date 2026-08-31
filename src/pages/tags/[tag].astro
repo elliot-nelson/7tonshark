@@ -1,0 +1,43 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getSortedPosts, postSlug, visibleTags, type Post } from "../../lib/posts";
+
+export async function getStaticPaths() {
+	const posts = await getSortedPosts();
+	const tags = [...new Set(posts.flatMap((p) => visibleTags(p.data.tags)))];
+	return tags.map((tag) => ({
+		params: { tag },
+		props: { tag, posts: posts.filter((p) => p.data.tags.includes(tag)) },
+	}));
+}
+
+interface Props {
+	tag: string;
+	posts: Post[];
+}
+const { tag, posts } = Astro.props;
+const fmt = (d: Date) =>
+	d.toLocaleDateString("en-US", {
+		year: "numeric",
+		month: "short",
+		day: "numeric",
+		timeZone: "UTC",
+	});
+---
+
+<Base title={`#${tag}`} description={`Posts tagged ${tag}.`}>
+	<p class="tags-backlink"><a href="/tags/">← All tags</a></p>
+	<h1>#{tag}</h1>
+	<ul class="postlist">
+		{
+			posts.map((post) => (
+				<li>
+					<a href={`/posts/${postSlug(post)}/`}>{post.data.title}</a>
+					<time datetime={post.data.date.toISOString().slice(0, 10)}>
+						{fmt(post.data.date)}
+					</time>
+				</li>
+			))
+		}
+	</ul>
+</Base>

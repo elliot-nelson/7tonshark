@@ -1,0 +1,369 @@
+@import "@fontsource/geist-sans/400.css";
+@import "@fontsource/geist-sans/500.css";
+@import "@fontsource/geist-sans/600.css";
+@import "@fontsource/geist-mono/400.css";
+
+:root {
+	/* Dark-on-light palette */
+	--bg: #fafaf8; /* warm off-white */
+	--bg-subtle: #f3f1ec; /* cards / hover fills */
+	--fg: #1a1a1a; /* near-black body text */
+	--fg-strong: #0d0d0d; /* headings */
+	--fg-muted: #6b6b6b; /* dates, metadata */
+	--rule: #e6e4dd; /* hairline dividers */
+
+	--accent: #009fe3; /* vibrant ocean azure */
+	--accent-hover: #3bbef7; /* lighter — "lights up" on hover */
+	--accent-visited: #0a72a8; /* deeper azure */
+
+	/* Inline code: light chip, dark text (NOT the dark block treatment) */
+	--code-inline-bg: #f0eee8;
+	--code-inline-fg: #9a3d5a;
+
+	--font-sans: "Geist Sans", -apple-system, system-ui, sans-serif;
+	--font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Consolas,
+		monospace;
+
+	--measure: 68ch;
+	--space: 1.5rem;
+
+	color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	overflow-y: scroll;
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	background-color: var(--bg);
+	color: var(--fg);
+	font-family: var(--font-sans);
+	font-size: 18px;
+	line-height: 1.65;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+/* Layout: centered single column, lots of space */
+.wrap {
+	max-width: var(--measure);
+	margin-inline: auto;
+	padding-inline: 1.5rem;
+}
+
+/* Skip link */
+.skip-link {
+	position: absolute;
+	left: -9999px;
+}
+.skip-link:focus {
+	left: 1rem;
+	top: 1rem;
+	z-index: 10;
+	background: var(--fg);
+	color: var(--bg);
+	padding: 0.5rem 0.75rem;
+	border-radius: 6px;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4 {
+	color: var(--fg-strong);
+	line-height: 1.2;
+	font-weight: 600;
+	letter-spacing: -0.015em;
+}
+h1 {
+	font-size: 2.4rem;
+	margin: 0 0 0.5rem;
+}
+h2 {
+	font-size: 1.5rem;
+	margin: 2.75rem 0 0.75rem;
+}
+h3 {
+	font-size: 1.2rem;
+	margin: 2rem 0 0.5rem;
+}
+
+p,
+li {
+	line-height: 1.7;
+}
+
+a {
+	color: var(--accent);
+	text-decoration-thickness: 1px;
+	text-underline-offset: 2px;
+}
+a:visited {
+	color: var(--accent-visited);
+}
+a:hover {
+	color: var(--accent-hover);
+}
+
+hr {
+	border: none;
+	border-top: 1px solid var(--rule);
+	margin: 3rem 0;
+}
+
+blockquote {
+	margin: 1.5rem 0;
+	padding: 0.25rem 0 0.25rem 1.25rem;
+	border-left: 3px solid var(--rule);
+	color: var(--fg-muted);
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* Inline code — light chip, dark text */
+:not(pre) > code {
+	font-family: var(--font-mono);
+	font-size: 0.875em;
+	background: var(--code-inline-bg);
+	color: var(--code-inline-fg);
+	padding: 0.15em 0.4em;
+	border-radius: 5px;
+}
+
+/* Code blocks — the one dark-on-light exception. Shiki sets bg via .astro-code */
+pre.astro-code {
+	font-family: var(--font-mono);
+	font-size: 0.9rem;
+	line-height: 1.6;
+	padding: 1rem 1.15rem;
+	border-radius: 10px;
+	overflow-x: auto;
+	margin: 1.5rem 0;
+	tab-size: 2;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+/* Header */
+.site-header {
+	border-bottom: 1px solid var(--rule);
+}
+.site-header .wrap {
+	display: flex;
+	align-items: baseline;
+	gap: 1.5rem;
+	padding-block: 1.25rem;
+	flex-wrap: wrap;
+}
+.site-title {
+	font-weight: 600;
+	font-size: 1.05rem;
+	letter-spacing: -0.01em;
+	color: var(--fg-strong);
+	text-decoration: none;
+}
+.site-nav {
+	display: flex;
+	gap: 1.25rem;
+	margin-left: auto;
+	font-size: 0.95rem;
+}
+.site-nav a {
+	color: var(--fg-muted);
+	text-decoration: none;
+}
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+	color: var(--fg-strong);
+}
+
+/* Footer */
+.site-footer {
+	border-top: 1px solid var(--rule);
+	margin-top: 5rem;
+	color: var(--fg-muted);
+	font-size: 0.875rem;
+}
+.site-footer .wrap {
+	padding-block: 2rem;
+	text-align: center;
+}
+
+main {
+	padding-block: 3rem;
+}
+
+/* Post list (home + archive) */
+.postlist {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.postlist li {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	gap: 1rem;
+	padding: 0.5rem 0;
+}
+.postlist a {
+	color: var(--fg-strong);
+	text-decoration: none;
+	font-weight: 500;
+}
+.postlist a:hover {
+	color: var(--accent);
+}
+.postlist time {
+	color: var(--fg-muted);
+	font-size: 0.85rem;
+	white-space: nowrap;
+	font-variant-numeric: tabular-nums;
+}
+
+/* Tags index */
+.taglist {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	list-style: none;
+	margin: 2rem 0 0;
+	padding: 0;
+}
+.taglist li {
+	display: inline-flex;
+	align-items: baseline;
+	gap: 0.35rem;
+	padding: 0.35rem 0.75rem;
+	background: var(--bg-subtle);
+	border-radius: 4px;
+}
+.taglist a {
+	color: var(--fg-strong);
+	text-decoration: none;
+	font-weight: 500;
+}
+.taglist a:hover {
+	color: var(--accent);
+}
+.taglist-count {
+	color: var(--fg-muted);
+	font-size: 0.8rem;
+	font-variant-numeric: tabular-nums;
+}
+
+.tags-backlink {
+	margin: 0 0 1rem;
+	font-size: 0.9rem;
+}
+.tags-backlink a {
+	color: var(--fg-muted);
+	text-decoration: none;
+}
+.tags-backlink a:hover {
+	color: var(--accent);
+}
+
+/* Post header meta */
+.post-meta {
+	color: var(--fg-muted);
+	font-size: 0.9rem;
+	margin: 0 0 2.5rem;
+	display: flex;
+	gap: 1rem;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+/* Only ever renders on the dev server — drafts aren't built in production. */
+.draft-badge {
+	display: inline-block;
+	margin: 0 0 1rem;
+	padding: 0.25rem 0.6rem;
+	border: 1px dashed var(--accent);
+	border-radius: 4px;
+	color: var(--accent-visited);
+	font-family: var(--font-mono);
+	font-size: 0.8rem;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+.post-tags {
+	display: inline-flex;
+	gap: 0.5rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.post-tags a {
+	color: var(--fg-muted);
+	text-decoration: none;
+}
+.post-tags a::before {
+	content: "#";
+}
+.post-tags a:hover {
+	color: var(--accent);
+}
+
+/* Prev / next */
+.prevnext {
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+	list-style: none;
+	padding: 1.5rem 0 0;
+	margin: 3rem 0 0;
+	border-top: 1px solid var(--rule);
+	font-size: 0.9rem;
+}
+
+/* Links page (blogroll) */
+.linklist {
+	list-style: none;
+	margin: 2rem 0 0;
+	padding: 0;
+}
+.linklist li {
+	padding: 0.5rem 0;
+	line-height: 1.5;
+}
+.linklist > li > a {
+	color: var(--accent);
+	text-decoration: none;
+	font-weight: 500;
+}
+.linklist > li > a:hover {
+	color: var(--accent-hover);
+}
+.linklist-by {
+	color: var(--fg-muted);
+	font-size: 0.9rem;
+}
+.linklist-by a {
+	color: var(--fg-muted);
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+}
+.linklist-by a:hover {
+	color: var(--accent);
+}
+
+/* Content images get a subtle frame */
+.post-content :is(p, figure) > img {
+	border: 1px solid var(--rule);
+	border-radius: 8px;
+	display: block;
+	margin-inline: auto;
+}

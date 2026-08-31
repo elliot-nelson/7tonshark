@@ -1,0 +1,20 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getTagsWithCounts } from "../../lib/posts";
+
+const tags = await getTagsWithCounts();
+---
+
+<Base title="Tags" description="Browse all topics on 7 ton shark.">
+	<h1>Tags</h1>
+	<ul class="taglist">
+		{
+			tags.map(({ tag, count }) => (
+				<li>
+					<a href={`/tags/${tag}/`}>#{tag}</a>
+					<span class="taglist-count">{count}</span>
+				</li>
+			))
+		}
+	</ul>
+</Base>
